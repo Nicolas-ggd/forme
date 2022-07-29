@@ -33,6 +33,7 @@ require_once "../../classes/databaseFunction.php";
 <body>
 
 <?php
+// require navbar
 require_once "../components/header.php";
 
 $edit = isset($_GET['edit']) && isset($_GET['product_id']);

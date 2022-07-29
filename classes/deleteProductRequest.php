@@ -7,7 +7,7 @@ $product_id = isset($_POST['product_id']) ?  $_POST['product_id'] : false;
 
 if ($product_id && !$error) {
     delete($product_id);
-    $data = 'success';
+    $data = 'Success';
 } else {
     $data = $error;
 }
