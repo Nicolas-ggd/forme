@@ -8,7 +8,7 @@ require_once "requestFunction.php";
 $product_id = isset($_POST['product_id']) ?  $_POST['product_id'] : false;
 
 if ($product_id && !$error) {
-    update($product_id, $name, $desc, $status);
+    update($product_id, $name, $desc, $status, $time);
     $data = 'Success';
 } else {
     $data = $error;

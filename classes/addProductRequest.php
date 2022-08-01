@@ -6,7 +6,7 @@ require_once "headComponents.php";
 require_once "requestFunction.php";
 
 if(!$error){
-    insert($name, $desc, $status);
+    insert($name, $desc, $status, $time);
     $data = "All field is fill";
 } else {
     $data = $error;

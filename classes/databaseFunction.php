@@ -22,34 +22,44 @@ function select($product_id = false)
         $products = $products->fetchAll(PDO::FETCH_ASSOC);
     }
 
-
     return $products;
 }
 
 // insert function
-function insert($name, $desc, $status)
+function insert($name, $desc, $status, $time)
 {
 
     $db = new DB();
     $pdo = $db->get_conn();
 
-    $query = "INSERT INTO product_table (product_name, product_desc, product_status)
-                VALUES (?, ?, ?)";
-    $stmt = $pdo->prepare($query);
-    $stmt->execute([$name, $desc, $status]);
+    $query = "INSERT INTO product_table (product_name, product_desc, product_status, product_deadline)
+                VALUES (?, ?, ?, ?)";
 
+    try{
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$name, $desc, $status, $time]);
+    } catch (Exception $e){
+        return false;
+    }
+    return true;
 }
 
 // update function
-function update($product_id, $name, $desc, $status)
+function update($product_id, $name, $desc, $status, $time)
 {
     $db = new DB();
     $pdo = $db->get_conn();
 
-    $query = "UPDATE product_table SET product_name = '$name', product_desc = '$desc', product_status = '$status'
+    $query = "UPDATE product_table SET product_name = '$name', product_desc = '$desc', product_status = '$status', product_deadline = '$time'
               WHERE id = $product_id;";
 
-    $pdo->query($query);
+    try {
+        $pdo->query($query);
+    } catch (Exception $e){
+        return false;
+    }
+    return true;
+
 }
 
 // delete function
@@ -59,5 +69,11 @@ function delete($product_id){
 
     $query = "DELETE FROM product_table WHERE id = $product_id";
 
-    $pdo->query($query);
+    try {
+        $pdo->query($query);
+    } catch ( Exception $e){
+        return false;
+    }
+    return true;
+
 }

@@ -21,14 +21,13 @@ require_once "classes/headComponents.php";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-
     <link rel="stylesheet" href="lib/sweetalert2.css">
-
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous" type="text/javacsript"></script>
     <!--  Sweet alert  -->
-    <script src="lib/sweetalert2.all.min.js" defer></script>
-    <script src="admin/js/request.js" defer></script>
+    <script src="lib/sweetalert2.all.min.js" type="text/javacsript" defer></script>
+    <script src="admin/js/request.js" type="text/javacsript" defer></script>
 
 </head>
 <body>
@@ -45,7 +44,8 @@ require_once "classes/headComponents.php";
                     <th>Product Name</th>
                     <th>Description</th>
                     <th>Status</th>
-                    <th class="col-md-3">Actions</th>
+                    <th>Last Time</th>
+                    <th class="col-md-2">Actions</th>
                 </tr>
                 </thead>
                 <tbody id="tatbody">
@@ -85,6 +85,12 @@ require_once "classes/headComponents.php";
                             </button>
                         </td>
                         <td>
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1"><?php echo $product['product_deadline']; ?></p>
+                                <p class="text-muted mb-0"></p>
+                            </div>
+                        </td>
+                        <td>
                             <a href="/forme/admin/pages/addProduct.php?edit=1&product_id=<?php echo $product['id']; ?>"
                                id="edit_line" class="btn  btn-warning btn-rounded">
                                 <i class="bi bi-pencil"></i>
@@ -92,7 +98,8 @@ require_once "classes/headComponents.php";
                             </a>
 
 
-                            <button type="button" value="<?php echo $product['id']; ?>" class="btn btn-danger delete_form" data-bs-toggle="modal" >
+                            <button type="button" value="<?php echo $product['id']; ?>"
+                                    class="btn btn-danger delete_form" data-bs-toggle="modal">
                                 <i class="bi bi-trash"></i>
                                 Delete
                             </button>

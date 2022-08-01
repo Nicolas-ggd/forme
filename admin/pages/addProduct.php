@@ -25,12 +25,14 @@ require_once "../../classes/databaseFunction.php";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/forme/lib/sweetalert2.css">
+    <link rel="stylesheet" href="/forme/lib/suite_gpl/codebase/suite.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
             crossorigin="anonymous" defer></script>
     <script src="/forme/lib/sweetalert2.all.min.js" defer></script>
     <script src="../js/request.js" defer></script>
-
+    <script type="text/javascript" src="/forme/lib/suite_gpl/codebase/suite.js"></script>
+    <script src="/forme/admin/js/datepicker.js"></script>
 
 </head>
 <body>
@@ -46,9 +48,7 @@ if ($edit){
 }
 
 ?>
-<div class="mob container pt-4">
 
-</div>
 <div class="container">
     <div class="row pt-5">
 
@@ -77,6 +77,13 @@ if ($edit){
                 <label for="exampleProductStatus" class="form-label ">Product Status</label>
                 <input type="text" class="form-control w-25" name="product_status" value="<?php echo $edit ? $product['product_status'] : '';?>" id="product_status">
                 <div id="emailHelp" class="form-text">Specify product stock.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleProductStatus" class="form-label ">Select date: how long stay your <br>
+                    product in website</label>
+                <input type="text" name="product_deadline" id="date-input" value="<?php echo $edit ? $product['product_deadline'] : '';?>" id="product_deadline" class="form-control w-25" style="width: 200px; background: white" readonly/>
+                <div id="emailHelp" class="form-text">Added time save automatically</div>
             </div>
 
             <button type="submit" class="btn btn-primary" id="send" name="add_product" form="add_form">Submit</button>
