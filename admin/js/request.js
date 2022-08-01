@@ -86,12 +86,15 @@ $(document).ready(function (){
                 $.post("/forme/classes/deleteProductRequest.php", params)
 
                     .done(function (response) {
-                        console.log('deleted')
                         btn.parent().parent().remove()
                     })
 
                     .fail(function () {
-                        console.log('error')
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Something went wrong!',
+                        })
                     });
 
                 Swal.fire(
