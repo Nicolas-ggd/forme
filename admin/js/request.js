@@ -11,15 +11,24 @@ $(document).ready(function () {
             $.post("/forme/classes/editProductRequest.php", params)
 
                 .done(function (response) {
-                    $(".mob").html("<div class=\"alert alert-success\">Edited product successful updated</div>").show(1000).delay(3000).hide("slow");
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Edited Product succesful updated',
+                        showConfirmButton: false,
+                    })
+
                     setTimeout(function () {
                         window.location.href = '/forme/';
                     }, 1000)
                 })
 
                 .fail(function () {
-
-                    $(".mob").html("<div class=\"alert alert-danger\">Please fill all field</div>").show(1000).delay(3000).hide("slow");
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Something went wrong!',
+                        text: 'Please fill all field',
+                    })
                 });
 
         } else {
@@ -27,14 +36,24 @@ $(document).ready(function () {
             $.post("/forme/classes/addProductRequest.php", params)
 
                 .done(function (response) {
-                    $(".mob").html("<div class=\"alert alert-success\">Product successful added</div>").show(1000).delay(3000).hide("slow");
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Product succesful added',
+                        showConfirmButton: false,
+                    })
+
                     setTimeout(function () {
                         window.location.href = '/forme/';
                     }, 1000)
                 })
 
                 .fail(function () {
-                    $(".mob").html("<div class=\"alert alert-danger\">Please fill all field</div>").show(1000).delay(3000).hide("slow");
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Something went wrong!',
+                        text: 'Please fill all field',
+                    })
                 });
 
         }

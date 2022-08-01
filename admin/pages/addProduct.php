@@ -24,10 +24,13 @@ require_once "../../classes/databaseFunction.php";
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/forme/lib/sweetalert2.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
             crossorigin="anonymous" defer></script>
+    <script src="/forme/lib/sweetalert2.all.min.js" defer></script>
     <script src="../js/request.js" defer></script>
+
 
 </head>
 <body>
