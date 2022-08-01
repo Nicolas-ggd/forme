@@ -6,8 +6,8 @@ $(document).ready(function () {
 
         e.preventDefault();
 
-        // edit request
         if ($('#product_id')[0]) {
+            // edit request
             $.post("/forme/classes/editProductRequest.php", params)
 
                 .done(function (response) {
@@ -23,6 +23,7 @@ $(document).ready(function () {
                 });
 
         } else {
+            // product add request
             $.post("/forme/classes/addProductRequest.php", params)
 
                 .done(function (response) {
