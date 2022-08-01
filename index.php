@@ -38,17 +38,21 @@ require_once "classes/headComponents.php";
 <div class="container-fluid">
     <div class="table-container px-5">
         <div class="col-md-12 pt-5">
-            <table class="table align-middle mb-0 bg-white">
+            <table class="table align-middle mb-0 bg-white table-bordered table-hover table-condensed " id="table">
                 <thead class="bg-light">
                 <tr>
                     <th>ID</th>
                     <th>Product Name</th>
                     <th>Description</th>
                     <th>Status</th>
-                    <th>Actions</th>
+                    <th class="col-md-3">Actions</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="tatbody">
+                <div class="d-flex col-md-3 pb-4">
+                        <input type="text" id="search" placeholder="Search products...">
+                </div>
+
                 <?php
 
                 $products = select();
