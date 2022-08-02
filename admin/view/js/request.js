@@ -1,5 +1,5 @@
 // post request method, add product
-$(document).ready(function () {
+window.onload = function () {
     $("#add_form").submit(function (e) {
 
         let params = $(this).serialize();
@@ -59,10 +59,7 @@ $(document).ready(function () {
         }
 
     });
-});
 
-// sweet alert, delete alert
-$(document).ready(function (){
     $(".delete_form").click(function (e){
         let btn = $(this);
         let val = btn.val();
@@ -105,14 +102,21 @@ $(document).ready(function (){
             }
         })
     });
+
+    $("#search_input").on("keyup", function (){
+        let value = $(this).val().toLowerCase();
+        $("#t_body tr").filter(function (){
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+}
+
+// sweet alert, delete alert
+$(document).ready(function (){
+
 });
 
 // search box
 $(document).ready(function (){
-    $("#search_input").on("keyup", function (){
-       let value = $(this).val().toLowerCase();
-       $("#t_body tr").filter(function (){
-           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-       });
-    });
+
 });

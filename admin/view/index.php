@@ -27,8 +27,8 @@ require_once "../app/classes/headComponents.php";
             crossorigin="anonymous" type="text/javacsript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!--  Sweet alert  -->
-    <script src="/admin/view/lib/sweetalert2.all.min.js" type="text/javacsript" defer></script>
-    <script src="../view/js/request.js" type="text/javacsript" defer></script>
+    <script src="lib/sweetalert2.all.min.js" defer></script>
+    <script src="js/request.js" defer></script>
 
 </head>
 <body>
