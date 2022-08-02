@@ -60,8 +60,8 @@ require_once "../app/classes/headComponents.php";
                 </tr>
                 </thead>
                 <tbody id="t_body">
-                <div class="d-flex col-md-3 pb-4">
-                        <input type="text" id="search_input" placeholder="Search products...">
+                <div class="d-flex col-md-6 pb-4">
+                        <input type="text" id="search_input" placeholder="Search products..." class="col-md-3">
                 </div>
 
                 <?php
