@@ -93,8 +93,8 @@ if ($edit) {
             </div>
 
             <div class="mb-3">
-                <label for="exampleProductStatus" class="form-label ">Select date: How long will your <br>
-                    product stay on our site?</label>
+                <label for="exampleProductStatus" class="form-label ">Select date: Note that, your product will <br>
+                    be stored on the site for 30 days</label>
                 <input type="text" name="product_deadline" id="date-input"
                        value="<?php echo $edit ? $product['product_deadline'] : ''; ?>" id="product_deadline"
                        class="form-control w-25" style="width: 200px; background: white" readonly/>
