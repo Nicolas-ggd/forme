@@ -93,12 +93,12 @@ if ($edit) {
             </div>
 
             <div class="mb-3">
-                <label for="exampleProductStatus" class="form-label ">Select date: how long stay your <br>
-                    product in website</label>
+                <label for="exampleProductStatus" class="form-label ">Select date: How long will your <br>
+                    product stay on our site?</label>
                 <input type="text" name="product_deadline" id="date-input"
                        value="<?php echo $edit ? $product['product_deadline'] : ''; ?>" id="product_deadline"
                        class="form-control w-25" style="width: 200px; background: white" readonly/>
-                <div id="emailHelp" class="form-text">Added time save automatically</div>
+                <div id="emailHelp" class="form-text">The date off addition is automatically saved</div>
             </div>
 
             <button type="submit" class="btn btn-primary" id="send" name="add_product" form="add_form">Submit</button>

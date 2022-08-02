@@ -34,7 +34,7 @@ require_once "../app/classes/headComponents.php";
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"></script>
     <!--  Sweet alert  -->
-    <script src="lib/sweetalert2.all.min.js"  defer></script>
+    <script src="lib/sweetalert2.all.min.js" defer></script>
     <!--  toastr alert massage -->
     <script src="lib/CodeSeven-toastr-2.1.4-7-g50092cc/CodeSeven-toastr-50092cc/toastr.js" defer></script>
     <!--  request js  -->
@@ -61,7 +61,7 @@ require_once "../app/classes/headComponents.php";
                 </thead>
                 <tbody id="t_body">
                 <div class="d-flex col-md-6 pb-4">
-                        <input type="text" id="search_input" placeholder="Search products..." class="col-md-3">
+                    <input type="text" id="search_input" placeholder="Search products..." class="col-md-3">
                 </div>
 
                 <?php
@@ -137,7 +137,6 @@ require_once "../app/classes/headComponents.php";
         </nav>
     </div>
 </div>
-
 
 
 </body>
