@@ -29,6 +29,7 @@ require_once "../../app/classes/databaseFunction.php";
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css" rel="stylesheet"/>
+    <!--  toastr alert massage  -->
     <link href="../lib/CodeSeven-toastr-2.1.4-7-g50092cc/CodeSeven-toastr-50092cc/build/toastr.css" rel="stylesheet"/>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
@@ -37,10 +38,11 @@ require_once "../../app/classes/databaseFunction.php";
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"></script>
     <script src="/forme/admin/view/lib/sweetalert2.all.min.js" defer></script>
-    <script src="../js/request.js" defer></script>
     <script type="text/javascript" src="/forme/admin/view/lib/suite_gpl/codebase/suite.js"></script>
     <script src="../js/datepicker.js" defer></script>
-    <script src="../lib/CodeSeven-toastr-2.1.4-7-g50092cc/CodeSeven-toastr-50092cc/toastr.js"></script>
+    <!--  toast alert massage  -->
+    <script src="../lib/CodeSeven-toastr-2.1.4-7-g50092cc/CodeSeven-toastr-50092cc/toastr.js" defer></script>
+    <script src="../js/request.js" defer></script>
 
 </head>
 <body>

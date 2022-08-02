@@ -11,12 +11,7 @@ $(document).ready(function () {
             $.post("/forme/admin/app/classes/editProductRequest.php", params)
 
                 .done(function (response) {
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Edited Product succesful updated',
-                        showConfirmButton: false,
-                    })
+                    toastr.success('Edited product successful updated');
 
                     setTimeout(function () {
                         window.location.href = '/forme/admin/view/';
@@ -24,11 +19,7 @@ $(document).ready(function () {
                 })
 
                 .fail(function () {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Something went wrong!',
-                        text: 'Please fill all field',
-                    })
+                    toastr.error('Please fill all field');
                 });
 
         } else {
@@ -36,19 +27,14 @@ $(document).ready(function () {
             $.post("/forme/admin/app/classes/addProductRequest.php", params)
 
                 .done(function (response) {
-                    toastr.success('Have fun storming the castle!', 'Miracle Max Says')
-
-                    // setTimeout(function () {
-                    //     window.location.href = '/forme/admin/view/';
-                    // }, 1000)
+                    toastr.success('Product successful added');
+                    setTimeout(function () {
+                        window.location.href = '/forme/admin/view/';
+                    }, 1000)
                 })
 
                 .fail(function () {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Something went wrong!',
-                        text: 'Please fill all field',
-                    })
+                    toastr.error('Please fill all field')
                 });
 
         }
@@ -83,18 +69,11 @@ $(document).ready(function () {
                     })
 
                     .fail(function () {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'Something went wrong!',
-                        })
+                        toastr.error('Something went wrong');
                     });
 
-                Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                )
+                toastr.success('Product successful deleted');
+
             }
         })
     });
