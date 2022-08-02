@@ -36,16 +36,11 @@ $(document).ready(function () {
             $.post("/forme/admin/app/classes/addProductRequest.php", params)
 
                 .done(function (response) {
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Product succesful added',
-                        showConfirmButton: false,
-                    })
+                    toastr.success('Have fun storming the castle!', 'Miracle Max Says')
 
-                    setTimeout(function () {
-                        window.location.href = '/forme/admin/view/';
-                    }, 1000)
+                    // setTimeout(function () {
+                    //     window.location.href = '/forme/admin/view/';
+                    // }, 1000)
                 })
 
                 .fail(function () {
