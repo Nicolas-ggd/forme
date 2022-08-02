@@ -19,7 +19,7 @@ $(document).ready(function () {
                     })
 
                     setTimeout(function () {
-                        window.location.href = '/forme/admin/app/';
+                        window.location.href = '/forme/admin/view/';
                     }, 1000)
                 })
 
@@ -44,7 +44,7 @@ $(document).ready(function () {
                     })
 
                     setTimeout(function () {
-                        window.location.href = '/forme/admin/app/';
+                        window.location.href = '/forme/admin/view/';
                     }, 1000)
                 })
 
