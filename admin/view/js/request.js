@@ -60,6 +60,7 @@ $(document).ready(function () {
 
     });
 
+    // delete request, with popup sweet alert
     $(".delete_form").click(function (e) {
         let btn = $(this);
         let val = btn.val();
@@ -103,6 +104,7 @@ $(document).ready(function () {
         })
     });
 
+    // search box filter
     $("#search_input").on("keyup", function () {
         let value = $(this).val().toLowerCase();
         $("#t_body tr").filter(function () {
