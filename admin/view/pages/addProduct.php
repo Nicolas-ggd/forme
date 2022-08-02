@@ -75,21 +75,21 @@ if ($edit) {
                 <label for="exampleProductName" class="form-label">Product Name</label>
                 <input type="text" class="form-control w-25" name="product_name"
                        value="<?php echo $edit ? $product['product_name'] : ''; ?>" id="product_name">
-                <div id="emailHelp" class="form-text">Enter the name of the product.</div>
+                <div class="form-text">Enter the name of the product.</div>
             </div>
 
             <div class="mb-3">
                 <label for="exampleProductDescription" class="form-label">Product Description</label>
                 <textarea type="text" class="form-control w-25" value="" name="product_desc"
                           id="product_desc"><?php echo $edit ? $product['product_desc'] : ''; ?></textarea>
-                <div id="emailHelp" class="form-text">Describe products condition.</div>
+                <div class="form-text">Describe products condition.</div>
             </div>
 
             <div class="mb-3">
                 <label for="exampleProductStatus" class="form-label ">Product Status</label>
                 <input type="text" class="form-control w-25" name="product_status"
                        value="<?php echo $edit ? $product['product_status'] : ''; ?>" id="product_status">
-                <div id="emailHelp" class="form-text">Specify product stock.</div>
+                <div class="form-text">Specify product stock.</div>
             </div>
 
             <div class="mb-3">
@@ -98,9 +98,8 @@ if ($edit) {
                 <input type="text" name="product_deadline" id="date-input"
                        value="<?php echo $edit ? $product['product_deadline'] : ''; ?>" id="product_deadline"
                        class="form-control w-25" style="width: 200px; background: white" readonly/>
-                <div id="emailHelp" class="form-text">The date off addition is automatically saved</div>
+                <div class="form-text">The date off addition is automatically saved</div>
             </div>
-
             <button type="submit" class="btn btn-primary" id="send" name="add_product" form="add_form">Submit</button>
             <a href="/forme/admin/view/index.php" class="btn btn-warning" form="add_form">Back</a>
 
