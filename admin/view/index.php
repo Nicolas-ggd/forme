@@ -110,7 +110,7 @@ require_once "../app/classes/headComponents.php";
 
 
                             <button type="button" value="<?php echo $product['id']; ?>"
-                                    class="btn btn-danger delete_form">
+                                    class="btn btn-danger delete_form btn-rounded">
                                 <i class="bi bi-trash"></i>
                                 Delete
                             </button>
