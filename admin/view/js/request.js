@@ -1,5 +1,5 @@
 // post request method, add product
-window.onload = function () {
+$(document).ready(function () {
     $("#add_form").submit(function (e) {
 
         let params = $(this).serialize();
@@ -60,7 +60,7 @@ window.onload = function () {
 
     });
 
-    $(".delete_form").click(function (e){
+    $(".delete_form").click(function (e) {
         let btn = $(this);
         let val = btn.val();
 
@@ -75,7 +75,7 @@ window.onload = function () {
         }).then((result, confirmButtonText) => {
             if (result.isConfirmed) {
 
-                let params = [{name:"product_id", value:val}];
+                let params = [{name: "product_id", value: val}];
 
                 e.preventDefault();
 
@@ -103,20 +103,12 @@ window.onload = function () {
         })
     });
 
-    $("#search_input").on("keyup", function (){
+    $("#search_input").on("keyup", function () {
         let value = $(this).val().toLowerCase();
-        $("#t_body tr").filter(function (){
+        $("#t_body tr").filter(function () {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     });
-}
-
-// sweet alert, delete alert
-$(document).ready(function (){
-
 });
 
-// search box
-$(document).ready(function (){
 
-});

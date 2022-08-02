@@ -32,7 +32,7 @@ require_once "../../app/classes/databaseFunction.php";
     <script src="/forme/admin/view/lib/sweetalert2.all.min.js" defer></script>
     <script src="../js/request.js" defer></script>
     <script type="text/javascript" src="/forme/admin/view/lib/suite_gpl/codebase/suite.js"></script>
-    <script src="/forme/admin/view/js/datepicker.js"></script>
+    <script src="../js/datepicker.js" defer></script>
 
 </head>
 <body>
