@@ -78,7 +78,8 @@ function delete($product_id){
 
 }
 
-function deleteProduct(){
+// delete product if date is overdue
+function deleteOverdueProduct(){
     $db = new DB();
     $pdo = $db->get_conn();
 
