@@ -62,12 +62,12 @@ require_once "../app/classes/headComponents.php";
             <table class="table align-middle mb-0 bg-white table-bordered table-hover table-condensed " id="table">
                 <thead class="bg-light">
                 <tr>
-                    <th>ID</th>
-                    <th>Product Name</th>
-                    <th>Description</th>
-                    <th>Status</th>
-                    <th>Last Time</th>
-                    <th class="col-md-2">Actions</th>
+                    <th>ID <i class="icon bi bi-arrow-up mx-1"> </i></th>
+                    <th>Product Name <i class="icon bi bi-arrow-up mx-1"> </i></th>
+                    <th>Description <i class="icon bi bi-arrow-up mx-1"> </i></th>
+                    <th>Status <i class="icon bi bi-arrow-up mx-1"> </i></th>
+                    <th>Last Time <i class="icon bi bi-arrow-up mx-1"> </i></th>
+                    <th class="col-md-2">Actions <i class="icon bi bi-arrow-up mx-1"> </i></th>
                 </tr>
                 </thead>
                 <tbody id="t_body">

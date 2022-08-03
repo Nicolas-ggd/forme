@@ -32,5 +32,8 @@
 
 body{
     height: 100vh;
+}
 
+th{
+    cursor: pointer;
 }

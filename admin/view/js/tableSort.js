@@ -10,7 +10,7 @@ function sortTable(table, col, reverse) {
                     .localeCompare(b.cells[col].textContent.trim())
             );
     });
-    for(i = 0; i < tr.length; ++i) tb.appendChild(tr[i]); // append each row in order
+    for (i = 0; i < tr.length; ++i) tb.appendChild(tr[i]); // append each row in order
 }
 
 function makeSortable(table) {
@@ -20,7 +20,9 @@ function makeSortable(table) {
     else return; // if no `<thead>` then do nothing
     while (--i >= 0) (function (i) {
         var dir = 1;
-        th[i].addEventListener('click', function () {sortTable(table, i, (dir = 1 - dir))});
+        th[i].addEventListener('click', function () {
+            sortTable(table, i, (dir = 1 - dir))
+        });
     }(i));
 }
 
@@ -30,5 +32,8 @@ function makeAllSortable(parent) {
     while (--i >= 0) makeSortable(t[i]);
 }
 
-window.onload = function () {makeAllSortable();};
+window.onload = function () {
+    makeAllSortable();
+};
+
 
