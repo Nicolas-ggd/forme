@@ -79,8 +79,8 @@ require_once "../app/classes/headComponents.php";
 
                 foreach ($products as $i => $product) { ?>
                     <tr id="pagination-tr" data-current-page="1">
-                        <td>
-                            <div class="d-flex align-items-center">
+                        <td class="px-0">
+                            <div class="d-flex">
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo $product['id']; ?></p>
                                     <p class="text-muted mb-0"></p>
@@ -148,7 +148,15 @@ require_once "../app/classes/headComponents.php";
         </nav>
     </div>
 </div>
-
+<div class="container">
+    <footer class="py-3">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="pages/addProduct.php" class="nav-link px-2 text-muted">Admin panel</a></li>
+        </ul>
+        <p class="text-center text-muted">&copy; 2022 Company, Inc</p>
+    </footer>
+</div>
 
 </body>
 </html>

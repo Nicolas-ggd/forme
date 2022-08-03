@@ -77,3 +77,20 @@ function delete($product_id){
     return true;
 
 }
+
+function deleteProduct(){
+    $db = new DB();
+    $pdo = $db->get_conn();
+
+    $date = date("Y-m-d");
+
+    $query = "DELETE FROM product_table WHERE product_deadline <= '$date';";
+
+    try {
+        $pdo->query($query);
+    } catch ( Exception $e){
+        return false;
+    }
+    return true;
+
+}
