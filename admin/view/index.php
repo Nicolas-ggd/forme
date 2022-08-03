@@ -21,15 +21,22 @@ require_once "../app/classes/headComponents.php";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- sweet alert -->
     <link rel="stylesheet" href="lib/sweetalert2.css">
+    <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css" rel="stylesheet"/>
+    <!--  toastr css  -->
     <link href="lib/CodeSeven-toastr-2.1.4-7-g50092cc/CodeSeven-toastr-50092cc/build/toastr.css" rel="stylesheet"/>
+    <!--  pagination css  -->
+    <link rel="stylesheet" href="css/pagination.css">
 
+    <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
             crossorigin="anonymous" type="text/javacsript"></script>
+    <!-- jquery googleapis -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"></script>
@@ -37,6 +44,8 @@ require_once "../app/classes/headComponents.php";
     <script src="lib/sweetalert2.all.min.js" defer></script>
     <!--  toastr alert massage -->
     <script src="lib/CodeSeven-toastr-2.1.4-7-g50092cc/CodeSeven-toastr-50092cc/toastr.js" defer></script>
+    <!--  pagination with vanilla js  -->
+    <script src="js/pagination.js" defer></script>
     <!--  request js  -->
     <script src="js/request.js" defer></script>
 
@@ -69,7 +78,7 @@ require_once "../app/classes/headComponents.php";
                 $products = select();
 
                 foreach ($products as $i => $product) { ?>
-                    <tr>
+                    <tr id="pagination-tr" data-current-page="1">
                         <td>
                             <div class="d-flex align-items-center">
                                 <div class="ms-3">
@@ -122,18 +131,20 @@ require_once "../app/classes/headComponents.php";
             </table>
         </div>
         <div class="my-3"></div>
-        <nav aria-label="Page navigation example">
+        <nav class="pagination-container">
             <ul class="pagination justify-content-end">
                 <li class="page-item disabled">
-                    <a class="page-link">Previous</a>
+                    <button class="pagination-button page-link" id="prev-button" aria-label="Previous page"
+                            title="Prev page"></button>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
                 <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
+                    <button id="next-button" class="pagination-button page-link" aria-label="Next page"
+                            title="Next page"></button>
                 </li>
+                <div id="pagination-numbers">
+
             </ul>
+
         </nav>
     </div>
 </div>

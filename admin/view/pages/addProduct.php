@@ -19,29 +19,40 @@ require_once "../../app/classes/databaseFunction.php";
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add Product</title>
+    <!--  Bootstrap css  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!--  Bootstrap icons  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!--  Bootstrap  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--  Sweet alert  -->
     <link rel="stylesheet" href="/forme/admin/view/lib/sweetalert2.css">
+    <!--  Suite gpl  -->
     <link rel="stylesheet" href="/forme/admin/view/lib/suite_gpl/codebase/suite.css">
+    <!--  Cloudflare  -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css" rel="stylesheet"/>
     <!--  toastr alert massage  -->
     <link href="../lib/CodeSeven-toastr-2.1.4-7-g50092cc/CodeSeven-toastr-50092cc/build/toastr.css" rel="stylesheet"/>
 
+    <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
             crossorigin="anonymous" defer></script>
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"></script>
+    <!-- Sweet alert js -->
     <script src="/forme/admin/view/lib/sweetalert2.all.min.js" defer></script>
+    <!-- Suite gpl js -->
     <script type="text/javascript" src="/forme/admin/view/lib/suite_gpl/codebase/suite.js"></script>
+    <!-- Datapicker calendar js -->
     <script src="../js/datepicker.js" defer></script>
     <!--  toast alert massage  -->
     <script src="../lib/CodeSeven-toastr-2.1.4-7-g50092cc/CodeSeven-toastr-50092cc/toastr.js" defer></script>
+    <!-- Request js -->
     <script src="../js/request.js" defer></script>
 
 </head>
