@@ -46,6 +46,8 @@ require_once "../app/classes/headComponents.php";
     <script src="lib/CodeSeven-toastr-2.1.4-7-g50092cc/CodeSeven-toastr-50092cc/toastr.js" defer></script>
     <!--  pagination with vanilla js  -->
     <script src="js/pagination.js" defer></script>
+    <!-- Table sort js -->
+    <script src="js/tableSort.js"></script>
     <!--  request js  -->
     <script src="js/request.js" defer></script>
 
