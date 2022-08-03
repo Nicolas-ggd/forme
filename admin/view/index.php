@@ -69,8 +69,8 @@ require_once "../app/classes/headComponents.php";
                 </tr>
                 </thead>
                 <tbody id="t_body">
-                <div class="d-flex col-md-6 pb-4">
-                    <input type="text" id="search_input" placeholder="Search products..." class="col-md-3">
+                <div class="d-flex col-md-2 pb-4">
+                    <input type="text" id="search_input" placeholder="Search products..." class="form-control">
                 </div>
 
                 <?php
@@ -148,15 +148,7 @@ require_once "../app/classes/headComponents.php";
         </nav>
     </div>
 </div>
-<div class="container">
-    <footer class="py-3">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="pages/addProduct.php" class="nav-link px-2 text-muted">Admin panel</a></li>
-        </ul>
-        <p class="text-center text-muted">&copy; 2022 Company, Inc</p>
-    </footer>
-</div>
+
 
 </body>
 </html>
