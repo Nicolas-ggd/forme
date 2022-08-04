@@ -115,13 +115,13 @@ require_once "../app/classes/headComponents.php";
                                 Edit
                             </a>
 
-                            <button type="button" value="<?php echo $product['id']; ?>"
+                            <button type="button"
                                     class="btn btn-danger delete_form btn-rounded">
                                 <i class="ties bi bi-trash"></i>
                                 Delete
                             </button>
 
-                            <button type="button"
+                            <button type="button" value="<?php echo $product['id']; ?>"
                                     class="d-none btn btn-success confirm btn-rounded">
                                 <i class="ties bi bi-check-lg"></i>
                                 Confirm
