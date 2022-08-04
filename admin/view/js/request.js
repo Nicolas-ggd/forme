@@ -44,40 +44,39 @@ $(document).ready(function () {
     // delete request, with popup sweet alert
     $(".delete_form").click(function () {
 
-        $(".delete_form").hide();
-        $(".confirm").removeClass("d-none").show();
-        // $(".delete_form").removeClass('btn-danger').addClass('btn-success');
-        // $(".ties").removeClass('bi-trash').addClass('bi-check-lg');
+        let confirmBtn = $(this).parent().find(".confirm")
+        $(this).hide();
+        confirmBtn.removeClass("d-none").show();
+        confirmBtn.focus();
 
+    });
 
-        $(".confirm").click(function (e){
-            let btn = $(this);
-            let val = btn.val();
+    $(".confirm").focusout(function (e){
+        let confirmBtn = $(this).parent().find(".delete_form")
+        $(this).hide();
+        confirmBtn.removeClass("d-none").show();
+    })
 
+    $(".confirm").click(function (e) {
 
+        let btn = $(this);
+        let val = btn.val();
 
-            let params = [{name: "product_id", value: val}];
+        let params = [{name: "product_id", value: val}];
 
-            e.preventDefault();
+        e.preventDefault();
 
-            // delete request
-            $.post("/forme/admin/app/classes/deleteProductRequest.php", params)
+        // delete request
+        $.post("/forme/admin/app/classes/deleteProductRequest.php", params)
 
-                .done(function (response) {
-                    btn.parent().parent().remove()
-                    $(".confirm").addClass("d-none");
-                    $(".delete_form").show();
-                })
+            .done(function (response) {
+                btn.parent().parent().remove();
+                toastr.success('Product successful deleted');
+            })
 
-                .fail(function () {
-                    toastr.error('Something went wrong');
-                });
-
-            toastr.success('Product successful deleted');
-        });
-
-
-
+            .fail(function () {
+                toastr.error('Something went wrong');
+            });
 
     });
 
