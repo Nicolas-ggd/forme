@@ -85,7 +85,7 @@ function deleteOverdueProduct(){
 
     $date = date("Y-m-d");
 
-    $query = "DELETE FROM product_table WHERE product_deadline <= '$date';";
+    $query = "DELETE FROM product_table WHERE product_deadline < '$date';";
 
     try {
         $pdo->query($query);
