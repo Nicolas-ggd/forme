@@ -42,49 +42,53 @@ $(document).ready(function () {
     });
 
     // delete request, with popup sweet alert
-    $(".delete_form").click(function (e) {
-        let btn = $(this);
-        let val = btn.val();
+    $(".delete_form").click(function () {
 
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result, confirmButtonText) => {
-            if (result.isConfirmed) {
+        $(".delete_form").hide();
+        $(".confirm").removeClass("d-none").show();
+        // $(".delete_form").removeClass('btn-danger').addClass('btn-success');
+        // $(".ties").removeClass('bi-trash').addClass('bi-check-lg');
 
-                let params = [{name: "product_id", value: val}];
 
-                e.preventDefault();
+        $(".confirm").click(function (e){
+            let btn = $(this);
+            let val = btn.val();
 
-                // delete request
-                $.post("/forme/admin/app/classes/deleteProductRequest.php", params)
 
-                    .done(function (response) {
-                        btn.parent().parent().remove()
-                    })
 
-                    .fail(function () {
-                        toastr.error('Something went wrong');
-                    });
+            let params = [{name: "product_id", value: val}];
 
-                toastr.success('Product successful deleted');
+            e.preventDefault();
 
-            }
-        })
+            // delete request
+            $.post("/forme/admin/app/classes/deleteProductRequest.php", params)
+
+                .done(function (response) {
+                    btn.parent().parent().remove()
+                    $(".confirm").addClass("d-none");
+                    $(".delete_form").show();
+                })
+
+                .fail(function () {
+                    toastr.error('Something went wrong');
+                });
+
+            toastr.success('Product successful deleted');
+        });
+
+
+
+
     });
 
-    // search box filter
+// search box filter
     $("#search_input").on("keyup", function () {
         let value = $(this).val().toLowerCase();
         $("#t_body tr").filter(function () {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     });
-});
+})
+;
 
 

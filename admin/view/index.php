@@ -21,8 +21,6 @@ require_once "../app/classes/headComponents.php";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <!-- sweet alert -->
-    <link rel="stylesheet" href="lib/sweetalert2.css">
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
     <!-- MDB -->
@@ -40,8 +38,6 @@ require_once "../app/classes/headComponents.php";
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"></script>
-    <!--  Sweet alert  -->
-    <script src="lib/sweetalert2.all.min.js" defer></script>
     <!--  toastr alert massage -->
     <script src="lib/CodeSeven-toastr-2.1.4-7-g50092cc/CodeSeven-toastr-50092cc/toastr.js" defer></script>
     <!--  pagination with vanilla js  -->
@@ -120,10 +116,16 @@ require_once "../app/classes/headComponents.php";
                             </a>
 
 
-                            <button type="button" value="<?php echo $product['id']; ?>"
+                            <button type="button"
                                     class="btn btn-danger delete_form btn-rounded">
-                                <i class="bi bi-trash"></i>
+                                <i class="ties bi bi-trash"></i>
                                 Delete
+                            </button>
+
+                            <button type="button" value="<?php echo $product['id']; ?>"
+                                    class="d-none btn btn-success delete_form confirm btn-rounded">
+                                <i class="ties bi bi-check-lg"></i>
+                                Confirm
                             </button>
 
                         </td>
