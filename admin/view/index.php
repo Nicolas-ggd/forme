@@ -68,7 +68,7 @@ require_once "../app/classes/headComponents.php";
                 </thead>
                 <tbody id="t_body">
                 <div class="d-flex col-md-2 pb-4">
-                    <input type="text" id="search_input" placeholder="Search products..." class="form-control btn-rounded">
+                    <input type="text" id="search_input" placeholder="Search products..." class="form-control">
                 </div>
 
                 <?php
