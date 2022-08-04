@@ -1,8 +1,8 @@
 <?php
 
 class DB {
-    private $_connection;
-    private  $_instance;
+//    private $_connection;
+//    private  $_instance;
 
     private $_host = "127.0.0.1";
     private $_database = "schema_name";
