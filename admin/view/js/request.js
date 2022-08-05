@@ -51,7 +51,7 @@ $(document).ready(function () {
 
     });
 
-    $(".confirm").focusout(function (e) {
+    $(".confirm").focusout(function () {
         let confirmBtn = $(this).parent().find(".delete_form")
         $(this).hide();
         confirmBtn.removeClass("d-none").show();
@@ -80,6 +80,29 @@ $(document).ready(function () {
 
     });
 
+    $(".mass_delete").click(function () {
+
+        let params = $("#table_form").serialize();
+
+        let chk_box = $(".check_box:checked");
+
+        if (chk_box){
+
+            // mass delete request
+            $.post("/forme/admin/app/classes/massDeleteFunction.php", params)
+
+                .done(function (response) {
+                    chk_box.parent().parent().parent().parent().remove();
+                    toastr.success('Product successful deleted');
+                })
+
+                .fail(function () {
+                    toastr.error('Something went wrong');
+                });
+        }
+        else{
+            toastr.error('Something went wrong');
+        }
+    });
+
 });
-
-
