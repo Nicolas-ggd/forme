@@ -13,4 +13,4 @@ $data = '';
 // require database
 require_once __DIR__ . "/database.php";
 // require databaseFunction
-require_once "databaseFunction.php";
+require_once "productFunction.php";

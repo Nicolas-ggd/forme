@@ -3,7 +3,7 @@
 // require database
 require_once "admin/app/classes/database.php";
 // require databasefunction
-require_once "admin/app/classes/databaseFunction.php";
+require_once "admin/app/classes/productFunction.php";
 
 
 deleteOverdueProduct();

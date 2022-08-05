@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once "../app/classes/databaseFunction.php";
+require_once "../app/classes/productFunction.php";
 require_once "../app/classes/headComponents.php";
 ?>
 
@@ -22,9 +22,9 @@ require_once "../app/classes/headComponents.php";
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
     <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css" rel="stylesheet"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css" rel="stylesheet"/>
     <!--  toastr css  -->
     <link href="lib/CodeSeven-toastr-2.1.4-7-g50092cc/CodeSeven-toastr-50092cc/build/toastr.css" rel="stylesheet"/>
     <!--  pagination css  -->
@@ -34,6 +34,10 @@ require_once "../app/classes/headComponents.php";
     <script src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
             crossorigin="anonymous" type="text/javacsript"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"></script>
     <!-- jquery googleapis -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- MDB -->
@@ -59,11 +63,11 @@ require_once "../app/classes/headComponents.php";
                 <thead class="bg-light">
                 <tr>
                     <th>ID <i class="bi bi-arrow-down-up mx-1"></i></th>
-                    <th>Product Name <i class="bi bi-arrow-down-up mx-1"></i> </th>
-                    <th>Description <i class="bi bi-arrow-down-up mx-1"></i> </th>
-                    <th>Status <i class="bi bi-arrow-down-up mx-1"></i> </th>
-                    <th>Last Time <i class="bi bi-arrow-down-up mx-1"></i> </th>
-                    <th class="col-md-2">Actions <i class="bi bi-arrow-down-up mx-1"></i> </th>
+                    <th>Product Name <i class="bi bi-arrow-down-up mx-1"></i></th>
+                    <th>Description <i class="bi bi-arrow-down-up mx-1"></i></th>
+                    <th>Status <i class="bi bi-arrow-down-up mx-1"></i></th>
+                    <th>Last Time <i class="bi bi-arrow-down-up mx-1"></i></th>
+                    <th class="col-md-2">Actions <i class="bi bi-arrow-down-up mx-1"></i></th>
                 </tr>
                 </thead>
                 <tbody id="t_body">
