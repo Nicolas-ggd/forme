@@ -10,7 +10,7 @@ function select($product_id = false)
     $pdo = $db->get_conn();
 
 
-    $query = "SELECT * FROM product_table ";
+    $query = "SELECT * FROM product ";
     if ($product_id) {
         $query .= "WHERE id = $product_id";
     }
@@ -32,12 +32,11 @@ function insert($name, $desc, $status, $time)
     $db = new DB();
     $pdo = $db->get_conn();
 
-    $query = "INSERT INTO product_table (product_name, product_desc, product_status, product_deadline)
-                VALUES (?, ?, ?, ?)";
+    $query = "INSERT INTO product (product_name, product_desc, product_status, product_deadline)
+                VALUES ('$name', '$desc', '$status', '$time')";
 
     try{
-        $stmt = $pdo->prepare($query);
-        $stmt->execute([$name, $desc, $status, $time]);
+        $pdo->query($query);
     } catch (Exception $e){
         return false;
     }
@@ -50,7 +49,7 @@ function update($product_id, $name, $desc, $status, $time)
     $db = new DB();
     $pdo = $db->get_conn();
 
-    $query = "UPDATE product_table SET product_name = '$name', product_desc = '$desc', product_status = '$status', product_deadline = '$time'
+    $query = "UPDATE product SET product_name = '$name', product_desc = '$desc', product_status = '$status', product_deadline = '$time'
               WHERE id = $product_id;";
 
     try {
@@ -67,7 +66,7 @@ function delete($product_id){
     $db = new DB();
     $pdo = $db->get_conn();
 
-    $query = "DELETE FROM product_table WHERE id = $product_id";
+    $query = "DELETE FROM product WHERE id = $product_id";
 
     try {
         $pdo->query($query);
@@ -85,7 +84,7 @@ function deleteOverdueProduct(){
 
     $date = date("Y-m-d");
 
-    $query = "DELETE FROM product_table WHERE product_deadline < '$date';";
+    $query = "DELETE FROM product WHERE product_deadline < '$date';";
 
     try {
         $pdo->query($query);
