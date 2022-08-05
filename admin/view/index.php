@@ -47,9 +47,13 @@ require_once "../app/classes/headComponents.php";
     <!--  pagination with vanilla js  -->
     <script src="js/pagination.js" defer></script>
     <!-- Table sort js -->
-    <script src="js/tableSort.js"></script>
+    <script src="js/tableSort.js" defer></script>
     <!--  request js  -->
     <script src="js/request.js" defer></script>
+    <!-- filter js -->
+    <script src="js/filter.js" defer></script>
+    <!-- checkbox select js -->
+    <script src="js/checkboxSelect.js" defer></script>
 
 </head>
 <body>
@@ -62,7 +66,7 @@ require_once "../app/classes/headComponents.php";
             <table class="table align-middle mb-0 bg-white table-bordered table-hover table-condensed " id="table">
                 <thead class="bg-light">
                 <tr>
-                    <th>ID <i class="bi bi-arrow-down-up mx-1"></i></th>
+                    <th><input type="checkbox" id="selectAll"> ID <i class="bi bi-arrow-down-up mx-1"></i></th>
                     <th>Product Name <i class="bi bi-arrow-down-up mx-1"></i></th>
                     <th>Description <i class="bi bi-arrow-down-up mx-1"></i></th>
                     <th>Status <i class="bi bi-arrow-down-up mx-1"></i></th>
@@ -83,8 +87,9 @@ require_once "../app/classes/headComponents.php";
                     <tr id="pagination-tr" data-current-page="1">
                         <td class="px-0">
                             <div class="d-flex">
-                                <div class="ms-3">
-                                    <p class="fw-bold mb-1"><?php echo $product['id']; ?></p>
+                                <div class="ms-3 d-flex align-items-center">
+                                    <input type="checkbox" name="productId[]" value="<?php echo $product['id']; ?>">
+                                    <p class="fw-bold px-1 align-items-center d-flex m-0"><?php echo $product['id']; ?></p>
                                     <p class="text-muted mb-0"></p>
                                 </div>
                             </div>
