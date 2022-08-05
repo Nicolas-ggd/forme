@@ -33,11 +33,11 @@ function insert($name, $desc, $status, $time)
     $pdo = $db->get_conn();
 
     $query = "INSERT INTO product (product_name, product_desc, product_status, product_deadline)
-                VALUES ('$name', '$desc', '$status', '$time')";
+              VALUES ('$name', '$desc', '$status', '$time')";
 
-    try{
+    try {
         $pdo->query($query);
-    } catch (Exception $e){
+    } catch (Exception $e) {
         return false;
     }
     return true;
@@ -54,7 +54,7 @@ function update($product_id, $name, $desc, $status, $time)
 
     try {
         $pdo->query($query);
-    } catch (Exception $e){
+    } catch (Exception $e) {
         return false;
     }
     return true;
@@ -62,7 +62,8 @@ function update($product_id, $name, $desc, $status, $time)
 }
 
 // delete function
-function delete($product_id){
+function delete($product_id)
+{
     $db = new DB();
     $pdo = $db->get_conn();
 
@@ -70,7 +71,7 @@ function delete($product_id){
 
     try {
         $pdo->query($query);
-    } catch ( Exception $e){
+    } catch (Exception $e) {
         return false;
     }
     return true;
@@ -78,7 +79,8 @@ function delete($product_id){
 }
 
 // delete product if date is overdue
-function deleteOverdueProduct(){
+function deleteOverdueProduct()
+{
     $db = new DB();
     $pdo = $db->get_conn();
 
@@ -88,9 +90,26 @@ function deleteOverdueProduct(){
 
     try {
         $pdo->query($query);
-    } catch ( Exception $e){
+    } catch (Exception $e) {
         return false;
     }
     return true;
 
+}
+
+// mass delete
+function massDelete($product_id)
+{
+    $db = new DB();
+    $pdo = $db->get_conn();
+
+    $query = "DELETE FROM product WHERE id IN (".implode(",", $product_id).")";
+
+    try {
+        $pdo->query($query);
+    } catch (Exception $e) {
+        http_response_code(400);
+        return false;
+    }
+    return true;
 }
