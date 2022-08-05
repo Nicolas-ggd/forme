@@ -41,7 +41,7 @@ $(document).ready(function () {
 
     });
 
-    // delete request, with popup sweet alert
+    // click delete button to transform confirm button
     $(".delete_form").click(function () {
 
         let confirmBtn = $(this).parent().find(".confirm")
@@ -80,7 +80,6 @@ $(document).ready(function () {
 
     });
 
-})
-;
+});
 
 

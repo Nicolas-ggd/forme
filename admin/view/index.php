@@ -75,8 +75,14 @@ require_once "../app/classes/headComponents.php";
                 </tr>
                 </thead>
                 <tbody id="t_body">
-                <div class="d-flex col-md-2 pb-4">
-                    <input type="text" id="search_input" placeholder="Search products..." class="form-control">
+
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex col-md-2 pb-4">
+                        <input type="text" id="search_input" placeholder="Search products..." class="form-control">
+                    </div>
+                    <div class="pb-4">
+                        <button type="button" class="h-20 btn btn-primary btn-rounded massdelete "> Mass Delete</button>
+                    </div>
                 </div>
 
                 <?php
@@ -88,7 +94,8 @@ require_once "../app/classes/headComponents.php";
                         <td class="px-0">
                             <div class="d-flex">
                                 <div class="ms-3 d-flex align-items-center">
-                                    <input type="checkbox" name="productId[]" value="<?php echo $product['id']; ?>">
+                                    <input id="checked" type="checkbox" name="productId[]"
+                                           value="<?php echo $product['id']; ?>">
                                     <p class="fw-bold px-1 align-items-center d-flex m-0"><?php echo $product['id']; ?></p>
                                     <p class="text-muted mb-0"></p>
                                 </div>
