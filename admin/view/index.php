@@ -22,9 +22,9 @@ require_once "../app/classes/headComponents.php";
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!-- MDB -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
     <!-- MDB -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css" rel="stylesheet"/>
     <!--  toastr css  -->
     <link href="lib/CodeSeven-toastr-2.1.4-7-g50092cc/CodeSeven-toastr-50092cc/build/toastr.css" rel="stylesheet"/>
     <!--  pagination css  -->
@@ -82,7 +82,11 @@ require_once "../app/classes/headComponents.php";
                             <input type="text" id="search_input" placeholder="Search products..." class="form-control">
                         </div>
                         <div class="pb-4">
-                            <button type="button" class="h-20 btn btn-primary btn-rounded mass_delete"> Mass Delete</button>
+                            <button type="button" class="h-20 btn btn-primary btn-rounded mass"> Mass Delete</button>
+
+                            <button type="button" class="d-none mass_delete btn btn-success btn-rounded"><i
+                                        class="mx-1 ties bi bi-check-lg"></i>Confirm
+                            </button>
                         </div>
                     </div>
 

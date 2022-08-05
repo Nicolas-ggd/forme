@@ -80,6 +80,24 @@ $(document).ready(function () {
 
     });
 
+
+    // mass delete
+
+    $(".mass").click(function () {
+
+        let confirmBtn = $(this).parent().find(".mass_delete")
+        $(this).hide();
+        confirmBtn.removeClass("d-none").show();
+        confirmBtn.focus();
+
+    });
+
+    $(".mass_delete").focusout(function () {
+        let confirmBtn = $(this).parent().find(".mass")
+        $(this).hide();
+        confirmBtn.removeClass("d-none").show();
+    })
+
     $(".mass_delete").click(function () {
 
         let params = $("#table_form").serialize();
