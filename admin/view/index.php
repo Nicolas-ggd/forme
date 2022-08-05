@@ -63,91 +63,96 @@ require_once "../app/classes/headComponents.php";
 <div class="container-fluid">
     <div class="table-container px-5">
         <div class="col-md-12 pt-5">
-            <table class="table align-middle mb-0 bg-white table-bordered table-hover table-condensed " id="table">
-                <thead class="bg-light">
-                <tr>
-                    <th><input type="checkbox" id="selectAll"> ID <i class="bi bi-arrow-down-up mx-1"></i></th>
-                    <th>Product Name <i class="bi bi-arrow-down-up mx-1"></i></th>
-                    <th>Description <i class="bi bi-arrow-down-up mx-1"></i></th>
-                    <th>Status <i class="bi bi-arrow-down-up mx-1"></i></th>
-                    <th>Last Time <i class="bi bi-arrow-down-up mx-1"></i></th>
-                    <th class="col-md-2">Actions <i class="bi bi-arrow-down-up mx-1"></i></th>
-                </tr>
-                </thead>
-                <tbody id="t_body">
-
-                <div class="d-flex justify-content-between">
-                    <div class="d-flex col-md-2 pb-4">
-                        <input type="text" id="search_input" placeholder="Search products..." class="form-control">
-                    </div>
-                    <div class="pb-4">
-                        <button type="button" class="h-20 btn btn-primary btn-rounded massdelete "> Mass Delete</button>
-                    </div>
-                </div>
-
-                <?php
-
-                $products = select();
-
-                foreach ($products as $i => $product) { ?>
-                    <tr id="pagination-tr" data-current-page="1">
-                        <td class="px-0">
-                            <div class="d-flex">
-                                <div class="ms-3 d-flex align-items-center">
-                                    <input id="checked" type="checkbox" name="productId[]"
-                                           value="<?php echo $product['id']; ?>">
-                                    <p class="fw-bold px-1 align-items-center d-flex m-0"><?php echo $product['id']; ?></p>
-                                    <p class="text-muted mb-0"></p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <div class="ms-3">
-                                    <p class="fw-bold mb-1"><?php echo $product['product_name']; ?></p>
-                                    <p class="text-muted mb-0"></p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <p class="fw-normal mb-1"><?php echo $product['product_desc']; ?></p>
-                            <p class="text-muted mb-0"></p>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-info rounded"
-                                    disabled><?php echo $product['product_status']; ?>
-                            </button>
-                        </td>
-                        <td>
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1"><?php echo $product['product_deadline']; ?></p>
-                                <p class="text-muted mb-0"></p>
-                            </div>
-                        </td>
-                        <td>
-                            <a href="/forme/admin/view/pages/addProduct.php?edit=1&product_id=<?php echo $product['id']; ?>"
-                               id="edit_line" class="btn  btn-warning btn-rounded">
-                                <i class="bi bi-pencil"></i>
-                                Edit
-                            </a>
-
-                            <button type="button"
-                                    class="btn btn-danger delete_form btn-rounded">
-                                <i class="ties bi bi-trash"></i>
-                                Delete
-                            </button>
-
-                            <button type="button" value="<?php echo $product['id']; ?>"
-                                    class="d-none btn btn-success confirm btn-rounded">
-                                <i class="ties bi bi-check-lg"></i>
-                                Confirm
-                            </button>
-
-                        </td>
+            <form id="table_form">
+                <table class="table align-middle mb-0 bg-white table-bordered table-hover table-condensed " id="table">
+                    <thead class="bg-light">
+                    <tr>
+                        <th><input type="checkbox" id="selectAll"> ID <i class="bi bi-arrow-down-up mx-1"></i></th>
+                        <th>Product Name <i class="bi bi-arrow-down-up mx-1"></i></th>
+                        <th>Description <i class="bi bi-arrow-down-up mx-1"></i></th>
+                        <th>Status <i class="bi bi-arrow-down-up mx-1"></i></th>
+                        <th>Last Time <i class="bi bi-arrow-down-up mx-1"></i></th>
+                        <th class="col-md-2">Actions <i class="bi bi-arrow-down-up mx-1"></i></th>
                     </tr>
-                <?php } ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody id="t_body">
+
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex col-md-2 pb-4">
+                            <input type="text" id="search_input" placeholder="Search products..." class="form-control">
+                        </div>
+                        <div class="pb-4">
+                            <button type="button" class="h-20 btn btn-primary btn-rounded mass_delete"> Mass Delete</button>
+                        </div>
+                    </div>
+
+                    <?php
+
+                    $products = select();
+
+                    if (isset($_POST))
+
+                        foreach ($products as $i => $product) { ?>
+                            <tr id="pagination-tr" data-current-page="1">
+                                <td class="px-0">
+                                    <div class="d-flex">
+                                        <div class="chk ms-3 d-flex align-items-center">
+                                            <input class="check_box" type="checkbox" name="check_productId[]"
+                                                   value="<?php echo $product['id']; ?>">
+                                            <p class="fw-bold px-1 align-items-center d-flex m-0"><?php echo $product['id']; ?></p>
+                                            <p class="text-muted mb-0"></p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="ms-3">
+                                            <p class="fw-bold mb-1"><?php echo $product['product_name']; ?></p>
+                                            <p class="text-muted mb-0"></p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="fw-normal mb-1"><?php echo $product['product_desc']; ?></p>
+                                    <p class="text-muted mb-0"></p>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-info rounded"
+                                            disabled><?php echo $product['product_status']; ?>
+                                    </button>
+                                </td>
+                                <td>
+                                    <div class="ms-3">
+                                        <p class="fw-bold mb-1"><?php echo $product['product_deadline']; ?></p>
+                                        <p class="text-muted mb-0"></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <a href="/forme/admin/view/pages/addProduct.php?edit=1&product_id=<?php echo $product['id']; ?>"
+                                       id="edit_line" class="btn  btn-warning btn-rounded">
+                                        <i class="bi bi-pencil"></i>
+                                        Edit
+                                    </a>
+
+                                    <button type="button"
+                                            class="btn btn-danger delete_form btn-rounded">
+                                        <i class="ties bi bi-trash"></i>
+                                        Delete
+                                    </button>
+
+                                    <button type="button" value="<?php echo $product['id']; ?>"
+                                            class="d-none btn btn-success confirm btn-rounded">
+                                        <i class="ties bi bi-check-lg"></i>
+                                        Confirm
+                                    </button>
+
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+
+            </form>
         </div>
         <div class="my-3"></div>
         <nav class="pagination-container">
