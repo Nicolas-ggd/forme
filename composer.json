@@ -1,0 +1,13 @@
+{
+    "name": "nicolas-ggd/forme",
+    "authors": [
+        {
+            "name": "Nicolas-ggd",
+            "email": "98224439+Nicolas-ggd@users.noreply.github.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "classmap": ["admin/App"]
+    }
+}
