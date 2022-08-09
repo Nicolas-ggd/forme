@@ -34,8 +34,12 @@
     <script src="/public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <script src="/public/dist/js/adminlte.min.js?v=3.2.0"></script>
     <script src="/public/dist/js/demo.js"></script>
+    <script src="/public/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="/public/plugins/jquery-validation/additional-methods.min.js"></script>
 
-    <script src="/public/js/register.js" defer></script>
+
+
+    <script src="/public/js/Register.js" defer></script>
 </head>
 <body class="register-page iframe-mode" style="height: 100%;">
 <div class="register-box">
@@ -113,10 +117,82 @@
                     Sign up using Google+
                 </a>
             </div>
-            <a href="#" class="text-center">I already have a membership</a>
+            <a href="?action=login">I allready have account</a>
         </div>
 
     </div>
 </div>
+<!--<script>-->
+<!--    $(function () {-->
+<!--        // $.validator.setDefaults({-->
+<!--        //     submitHandler: function () {-->
+<!--        //         $(document).Toasts('create', {-->
+<!--        //             class: 'bg-success',-->
+<!--        //             title: 'Success',-->
+<!--        //             subtitle: 'Subtitle',-->
+<!--        //             body: 'Form successful submitted!'-->
+<!--        //         })-->
+<!--        //     }-->
+<!--        // });-->
+<!--        $('#user_form').validate({-->
+<!--            rules: {-->
+<!--                user_name: {-->
+<!--                    required: true,-->
+<!--                    text: true,-->
+<!--                },-->
+<!--                user_lastname: {-->
+<!--                    required: true,-->
+<!--                    text: true,-->
+<!--                },-->
+<!--                user_email: {-->
+<!--                    required: true,-->
+<!--                    email: true,-->
+<!--                },-->
+<!--                user_password: {-->
+<!--                    required: true,-->
+<!--                    password: true,-->
+<!--                },-->
+<!--                reenter_password: {-->
+<!--                    required: true,-->
+<!--                    password: true,-->
+<!--                }-->
+<!---->
+<!--            },-->
+<!--            messages: {-->
+<!--                user_name: {-->
+<!--                    required: "Please enter a username",-->
+<!--                    text: "Please enter a valid email address"-->
+<!--                },-->
+<!--                user_lastname: {-->
+<!--                    required: "Please enter a lastname",-->
+<!--                    text: "Please enter a valid email address"-->
+<!--                },-->
+<!--                user_email: {-->
+<!--                    required: "Please enter a mail",-->
+<!--                    email: "Please enter a valid email address"-->
+<!--                },-->
+<!--                user_password: {-->
+<!--                    required: "Please enter a password",-->
+<!--                    text: "Please enter a valid email address",-->
+<!--                },-->
+<!--                reenter_password: {-->
+<!--                    required: "Please provide a password",-->
+<!--                    text: "Your password must be at least 5 characters long",-->
+<!--                },-->
+<!--            },-->
+<!--            errorElement: 'span',-->
+<!--            errorPlacement: function (error, element) {-->
+<!--                error.addClass('invalid-feedback');-->
+<!--                element.closest('.input-group').append(error);-->
+<!--            },-->
+<!--            highlight: function (element, errorClass, validClass) {-->
+<!--                $(element).addClass('is-invalid');-->
+<!--            },-->
+<!--            unhighlight: function (element, errorClass, validClass) {-->
+<!--                $(element).removeClass('is-invalid');-->
+<!--            }-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
 </body>
 </html>

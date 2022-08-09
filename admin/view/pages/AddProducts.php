@@ -39,11 +39,11 @@
 
     <script src="/public/dist/js/demo.js"></script>
     <!-- checkbox select js -->
-    <script src="/public/js/checkboxSelect.js"></script>
+    <script src="/public/js/CheckboxSelect.js"></script>
     <!-- Datapicker calendar js -->
-    <script src="/public/js/datepicker.js"></script>
+    <script src="/public/js/DatePicker.js"></script>
     <!-- Request js -->
-    <script src="/public/js/request.js"></script>
+    <script src="/public/js/Request.js"></script>
     <!-- suite gpl calendar -->
     <script src="/public/lib/suite_gpl/codebase/suite.js"></script>
 </head>

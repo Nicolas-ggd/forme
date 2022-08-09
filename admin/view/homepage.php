@@ -480,9 +480,9 @@
 <script src="/public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="/public/dist/js/adminlte.min.js?v=3.2.0"></script>
 <script src="/public/dist/js/demo.js"></script>
-<script src="/public/js/request.js" defer></script>
+<script src="/public/js/Request.js" defer></script>
 <!-- checkbox select js -->
-<script src="/public/js/checkboxSelect.js" defer></script>
+<script src="/public/js/CheckboxSelect.js" defer></script>
 
 <script>
     $(function () {
