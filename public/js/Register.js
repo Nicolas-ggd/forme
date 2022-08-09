@@ -15,19 +15,27 @@ $(document).ready(function () {
                         subtitle: 'Subtitle',
                         body: 'Account successful created'
                     })
+
+                    setTimeout(function () {
+                        window.location.href = '?action=login';
+                    }, 2000)
                 }
 
             })
 
             .fail(function (response) {
                 if (response) {
+                    let data = JSON.parse(response.responseText);
+                    data.error.forEach(error => {
 
-                    $(document).Toasts('create', {
-                        class: 'bg-danger',
-                        title: 'Error',
-                        subtitle: 'Subtitle',
-                        body: 'Something went wrong'
+                        $(document).Toasts('create', {
+                            class: 'bg-danger',
+                            title: 'Error',
+                            subtitle: 'Subtitle',
+                            body: error
+                        })
                     })
+
                 }
 
             })
