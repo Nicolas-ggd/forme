@@ -17,9 +17,13 @@ $(document).ready(function () {
                         body: 'Product successful deleted'
                     })
 
-                    // setTimeout(function () {
-                    //     window.location.href = 'index.php';
-                    // }, 1000)
+                    if(response){
+
+                        setTimeout(function () {
+                            window.location.href = 'index.php';
+                        }, 1000)
+
+                    }
                 })
 
                 .fail(function () {
@@ -42,10 +46,13 @@ $(document).ready(function () {
                         subtitle: 'Subtitle',
                         body: 'Product successful added'
                     })
+                    if (response){
 
-                    setTimeout(function () {
-                        window.location.href = 'index.php';
-                    }, 1000)
+                        setTimeout(function () {
+                            window.location.href = 'index.php';
+                        }, 1000)
+
+                    }
                 })
 
                 .fail(function () {
