@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Database\Product\UserRepository;
-use App\Request\UserRegistrationRequest;
+use App\Request\UserRequest;
 
 class UserController
 {
@@ -12,7 +12,7 @@ class UserController
 
     public function __construct(){
 
-        $this->request = new UserRegistrationRequest();
+        $this->request = new UserRequest();
         $this->repository = new UserRepository();
 
     }
@@ -20,20 +20,6 @@ class UserController
     public function createView(){
         $users = $this->repository->select();
         require 'admin/view/pages/CreateAccount.php';
-    }
-
-    public function add(){
-        $data = $this->request->registrationRequest();
-
-        if(!isset($data['error'])){
-            $this->repository->insert($data['name'], $data['lastname'], $data['email'], $data['password']);
-            $data = "Success";
-        } else {
-            $data = 'error';
-        }
-
-        echo json_encode($data);
-
     }
 
     public function  edit(){
