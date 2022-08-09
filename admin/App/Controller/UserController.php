@@ -27,9 +27,9 @@ class UserController
 
         if(!isset($data['error'])){
             $this->repository->insert($data['name'], $data['lastname'], $data['email'], $data['password']);
-            $data = $data["Success"];
+            $data = "Success";
         } else {
-            $data = 'Error';
+            $data = 'error';
         }
 
         echo json_encode($data);
@@ -44,10 +44,10 @@ class UserController
         if ($user_id && !isset($data['error'])) {
 
             $productRepository->update($data['name'], $data['lastname'], $data['email'], $data['password']);
-            $data = $data['Success'];
+            $data = "Success";
 
         } else {
-            $data = $data['Error'];
+            $data = 'error';
         }
 
         return json_encode($data);
