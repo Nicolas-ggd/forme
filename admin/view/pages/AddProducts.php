@@ -298,14 +298,16 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form method="post" id="add_form">
 
+
+                                <form method="post" id="add_form">
                                     <?php
 
-
+                                    if($product_id){
+                                        echo '<input type="hidden" class="form-control" name="product_id" value="' . $product_id . '" id="product_id">';
+                                    }
 
                                     ?>
-
                                     <div class="form-group">
                                         <label for="inputName">Product Name</label>
                                         <input type="text" id="product_name" name="product_name" class="form-control"
