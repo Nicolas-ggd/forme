@@ -21,7 +21,7 @@ switch ($uri) {
     default:
         $controller = new \App\Controller\ProductController();
         $userController = new \App\Controller\UserController();
-        $loginController = new \App\Controller\LoginController();
+        $registrationController = new \App\Controller\RegistrationController();
 
         if (isset($_GET['action'])) {
 
@@ -31,33 +31,35 @@ switch ($uri) {
             if ($_GET['action'] == 'addProduct') {
                 $controller->addView();
             }
-            if ($_GET['action'] == 'back'){
+            if ($_GET['action'] == 'back') {
                 $controller->index();
             }
-            if ($_GET['action'] == 'create'){
-                $loginController->createView();
+            if ($_GET['action'] == 'create') {
+                $registrationController->createView();
+            }
+            if ($_GET['action'] == 'login'){
+                $registrationController->loginView();
+            }
+
+        } elseif (isset($_GET['ajax'])) {
+            if ($_GET['ajax'] == 'productDelete') {
+                $controller->delete();
+            }
+            if ($_GET['ajax'] == 'massDelete') {
+                $controller->massDelete();
+            }
+            if ($_GET['ajax'] == "addProduct") {
+                $controller->add();
+            }
+            if ($_GET['ajax'] == "editProduct") {
+                $controller->edit();
+            }
+            if ($_GET['ajax'] == "createUser") {
+                $registrationController->registration();
             }
 
         } else {
 
-            if (isset($_GET['ajax'])) {
-                if ($_GET['ajax'] == 'productDelete') {
-                    $controller->delete();
-                }
-                if ($_GET['ajax'] == 'massDelete'){
-                    $controller->massDelete();
-                }
-                if ($_GET['ajax'] == "addProduct"){
-                    $controller->add();
-                }
-                if ($_GET['ajax'] == "editProduct"){
-                    $controller->edit();
-                }
-                if ($_GET['ajax'] == "createUser"){
-                    $loginController->ligin();
-                }
-
-            }
             $controller->index();
 
         }
