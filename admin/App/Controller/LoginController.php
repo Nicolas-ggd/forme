@@ -5,5 +5,5 @@ namespace App\Controller;
 
 class LoginController
 {
-    
+
 }
