@@ -28,13 +28,13 @@ class UserRepository
     }
 
     // insert function
-    function insert($name, $lastname, $email, $password, $time)
+    function insert($name, $lastname, $email, $password)
     {
 
         $db = new DB();
 
-        $query = "INSERT INTO users (user_name, user_lastname, user_email, user_password, create_time)
-              VALUES ('$name', '$lastname', '$email', '$password', '$time')";
+        $query = "INSERT INTO users (user_name, user_lastname, user_email, user_password)
+              VALUES ('$name', '$lastname', '$email', '$password')";
 
         $result = $db->execute($query);
 
