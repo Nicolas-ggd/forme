@@ -6,7 +6,6 @@ class UserRegistrationRequest
 {
 
     public function registrationRequest()
-    {
 
         $data = [];
 
