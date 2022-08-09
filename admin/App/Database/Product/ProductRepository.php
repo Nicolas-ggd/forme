@@ -7,7 +7,7 @@ use PDO;
 
 class ProductRepository
 {
-
+    // select function
     function select($product_id = false)
     {
         $db = new DB();
@@ -27,7 +27,7 @@ class ProductRepository
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
-// insert function
+    // insert function
     function insert($name, $desc, $price, $status, $time)
     {
 
