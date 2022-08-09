@@ -10,7 +10,7 @@ class ProductRequest
         $data = [];
 
         if (isset($_POST['product_name']) && isset($_POST['product_desc']) && isset($_POST['product_price']) && isset($_POST['product_status']) && isset($_POST['product_deadline'])) {
-
+            $data['id'] = $_POST['product_id'];
             $data['name'] = $_POST['product_name'];
             $data['desc'] = $_POST['product_desc'];
             $data['price'] = $_POST['product_price'];
