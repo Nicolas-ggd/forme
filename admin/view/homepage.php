@@ -119,6 +119,25 @@
                     <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
                 </div>
             </li>
+
+            <!-- User -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="far fa-bell"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <span class="dropdown-item dropdown-header">User</span>
+                    <div class="dropdown-divider"></div>
+                    <a href="?action=create" class="dropdown-item">
+                        <i class="fas fa-user mr-2"></i> Log Out
+                        <span class="float-right text-muted text-sm">Few minutes ago</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                </div>
+            </li>
+            <!-- User -->
+
             <!-- Notifications Dropdown Menu -->
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
@@ -287,14 +306,17 @@
                                                                 placeholder="" aria-controls="example1"></label>
                                                 </div>
                                                 <div class="">
-                                                    <a href="?action=addProduct" class="btn btn-outline-info my-2 btn-rounded">Add Product</a>
+                                                    <a href="?action=addProduct"
+                                                       class="btn btn-outline-info my-2 btn-rounded">Add Product</a>
 
-                                                    <button type="button" class="h-20 btn btn-outline-warning btn-rounded mass">
+                                                    <button type="button"
+                                                            class="h-20 btn btn-outline-warning btn-rounded mass">
                                                         Mass Delete
                                                     </button>
 
                                                     <button type="button"
-                                                            class="d-none mass_delete btn btn-outline-success btn-rounded"><i
+                                                            class="d-none mass_delete btn btn-outline-success btn-rounded">
+                                                        <i
                                                                 class="mx-1 ties bi bi-check-lg"></i>Confirm
                                                     </button>
                                                 </div>
@@ -386,7 +408,7 @@
                                                                                 <p class="text-muted mb-0"></p>
                                                                             </td>
                                                                             <td>
-                                                                                <span class="badge badge-success"><?php echo $product['product_price'];?></span>
+                                                                                <span class="badge badge-success"><?php echo $product['product_price']; ?></span>
                                                                             </td>
                                                                             <td>
                                                                                 <span class="badge badge-info"><?php echo $product['product_status']; ?></span>
@@ -439,8 +461,6 @@
         </section>
     </div>
 </div>
-
-
 
 
 <script src="/public/plugins/jquery/jquery.min.js"></script>
