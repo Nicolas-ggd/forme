@@ -21,6 +21,7 @@ switch ($uri) {
     default:
         $controller = new \App\Controller\ProductController();
         $userController = new \App\Controller\UserController();
+        $loginController = new \App\Controller\LoginController();
 
         if (isset($_GET['action'])) {
 
@@ -33,8 +34,8 @@ switch ($uri) {
             if ($_GET['action'] == 'back'){
                 $controller->index();
             }
-            if ($_GET['action'] == 'createUser'){
-                $userController->createView();
+            if ($_GET['action'] == 'create'){
+                $loginController->createView();
             }
 
         } else {
@@ -53,8 +54,9 @@ switch ($uri) {
                     $controller->edit();
                 }
                 if ($_GET['ajax'] == "createUser"){
-                    $userController->add();
+                    $loginController->ligin();
                 }
+
             }
             $controller->index();
 
