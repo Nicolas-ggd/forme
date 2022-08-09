@@ -20,6 +20,7 @@ switch ($uri) {
     //sxva casebi
     default:
         $controller = new \App\Controller\ProductController();
+        $userController = new \App\Controller\UserController();
 
         if (isset($_GET['action'])) {
 
@@ -31,6 +32,9 @@ switch ($uri) {
             }
             if ($_GET['action'] == 'back'){
                 $controller->index();
+            }
+            if ($_GET['action'] == 'createUser'){
+                $userController->createView();
             }
 
         } else {
@@ -47,6 +51,9 @@ switch ($uri) {
                 }
                 if ($_GET['ajax'] == "editProduct"){
                     $controller->edit();
+                }
+                if ($_GET['ajax'] == "createUser"){
+                    $userController->add();
                 }
             }
             $controller->index();
