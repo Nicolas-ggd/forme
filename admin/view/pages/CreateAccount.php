@@ -97,7 +97,7 @@
                     </div>
 
                     <div class="col-4">
-                        <button type="button" id="register" form="user_form" name="register_user" class="btn btn-primary btn-block">Register</button>
+                        <button type="submit" id="register" form="user_form" name="register_user" class="btn btn-primary btn-block">Register</button>
                     </div>
 
                 </div>
@@ -118,6 +118,5 @@
 
     </div>
 </div>
-
 </body>
 </html>
