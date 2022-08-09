@@ -60,11 +60,11 @@ class ProductController
 
         if ($product_id && !isset($data['error'])) {
 
-            $productRepository->update($data['id'], $data['name'], $data['desc'], $data['price'], $data['status'], $data['time']);
-            $data = $data['Success'];
+            $this->repository->update($data['id'], $data['name'], $data['desc'], $data['price'], $data['status'], $data['time']);
+            $data = "success message";
 
         } else {
-            $data = $data['Error'];
+            $data = $data['error'];
         }
 
         return json_encode($data);
