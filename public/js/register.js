@@ -1,29 +1,35 @@
-$(document).ready(function (){
+$(document).ready(function () {
 
-   $("#register").click(function (e){
+    $("#user_form").submit(function (e) {
 
-       let params = $(this).serialize();
+        let params = $(this).serialize();
+        e.preventDefault();
 
-       e.preventDefault();
+        $.post("?ajax=createUser", params)
 
-       $.post("?ajax=createUser", params)
+            .done(function (response) {
+                if (response) {
+                    $(document).Toasts('create', {
+                        class: 'bg-success',
+                        title: 'Success',
+                        subtitle: 'Subtitle',
+                        body: 'Account successful created'
+                    })
+                }
 
-           .done(function (response){
-               $(document).Toasts('create', {
-                   class: 'bg-success',
-                   title: 'Success',
-                   subtitle: 'Subtitle',
-                   body: 'Account successful created'
-               })
-           })
-
-            .fail(function (){
-                $(document).Toasts('create', {
-                    class: 'bg-danger',
-                    title: 'Error',
-                    subtitle: 'Subtitle',
-                    body: 'Something went wrong'
-                })
             })
-   });
+
+            .fail(function (response) {
+                if (response) {
+
+                    $(document).Toasts('create', {
+                        class: 'bg-danger',
+                        title: 'Error',
+                        subtitle: 'Subtitle',
+                        body: 'Something went wrong'
+                    })
+                }
+
+            })
+    });
 });
