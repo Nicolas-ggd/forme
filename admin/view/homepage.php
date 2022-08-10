@@ -126,7 +126,9 @@
                     <i class="far fa-bell"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <span class="dropdown-item dropdown-header">User</span>
+
+                    <span class="dropdown-item dropdown-header">
+                        <?php echo isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'user'; ?></span>
                     <div class="dropdown-divider"></div>
                     <a href="?action=create" class="dropdown-item">
                         <i class="fas fa-user mr-2"></i> Log Out
@@ -192,10 +194,11 @@
             <!-- Sidebar user (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    <img src="/public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Alexander Pierce</a>
+                    <a href="#"
+                       class="d-block"><?php echo isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'user'; ?></a>
                 </div>
             </div>
 
@@ -300,11 +303,6 @@
 
                                         <div class="card-body">
                                             <div class="d-flex align-items-center justify-content-between">
-                                                <div id="example1_filter" class="dataTables_filter"><label>Search:<input
-                                                                type="search"
-                                                                class="form-control form-control-sm"
-                                                                placeholder="" aria-controls="example1"></label>
-                                                </div>
                                                 <div class="">
                                                     <a href="?action=addProduct"
                                                        class="btn btn-outline-info my-2 btn-rounded">Add Product</a>
@@ -485,12 +483,13 @@
 <script src="/public/js/CheckboxSelect.js" defer></script>
 
 <script>
+
     $(function () {
-        $("#example1").DataTable({
+        $("#example2").DataTable({
             "responsive": true, "lengthChange": false, "autoWidth": false,
             "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        $('#example2').DataTable({
+        $('#example1').DataTable({
             "paging": true,
             "lengthChange": false,
             "searching": false,
@@ -500,6 +499,7 @@
             "responsive": true,
         });
     });
+
 </script>
 
 </body>
