@@ -17,22 +17,20 @@ $(document).ready(function () {
                         body: 'Product successful deleted'
                     })
 
-                    if(response){
-
-                        setTimeout(function () {
-                            window.location.href = 'index.php';
-                        }, 1000)
-
-                    }
+                    setTimeout(function () {
+                        window.location.href = '/';
+                    }, 1000)
                 })
 
-                .fail(function () {
-                    $(document).Toasts('create', {
-                        class: 'bg-danger',
-                        title: 'Error',
-                        subtitle: 'Subtitle',
-                        body: 'Please fill all field'
-                    })
+                .fail(function (response) {
+                    if (response) {
+                        $(document).Toasts('create', {
+                            class: 'bg-danger',
+                            title: 'Error',
+                            subtitle: 'Subtitle',
+                            body: 'Please fill all field'
+                        })
+                    }
                 });
 
         } else {
@@ -46,22 +44,24 @@ $(document).ready(function () {
                         subtitle: 'Subtitle',
                         body: 'Product successful added'
                     })
-                    if (response){
+                    if (response) {
 
                         setTimeout(function () {
-                            window.location.href = 'index.php';
+                            window.location.href = '/';
                         }, 1000)
 
                     }
                 })
 
-                .fail(function () {
-                    $(document).Toasts('create', {
-                        class: 'bg-danger',
-                        title: 'Error',
-                        subtitle: 'Subtitle',
-                        body: 'Please fill all field'
-                    })
+                .fail(function (response) {
+                    if (response) {
+                        $(document).Toasts('create', {
+                            class: 'bg-danger',
+                            title: 'Error',
+                            subtitle: 'Subtitle',
+                            body: 'Please fill all field'
+                        })
+                    }
                 });
 
         }
@@ -97,22 +97,26 @@ $(document).ready(function () {
         $.post("?ajax=productDelete", params)
 
             .done(function (response) {
-                btn.parent().parent().remove();
-                $(document).Toasts('create', {
-                    class: 'bg-success',
-                    title: 'Success',
-                    subtitle: 'Subtitle',
-                    body: 'Product successful deleted'
-                })
+                if (response) {
+                    btn.parent().parent().remove();
+                    $(document).Toasts('create', {
+                        class: 'bg-success',
+                        title: 'Success',
+                        subtitle: 'Subtitle',
+                        body: 'Product successful deleted'
+                    })
+                }
             })
 
-            .fail(function () {
-                $(document).Toasts('create', {
-                    class: 'bg-danger',
-                    title: 'Error',
-                    subtitle: 'Subtitle',
-                    body: 'Something went wrong'
-                })
+            .fail(function (response) {
+                if (response) {
+                    $(document).Toasts('create', {
+                        class: 'bg-danger',
+                        title: 'Error',
+                        subtitle: 'Subtitle',
+                        body: 'Something went wrong'
+                    })
+                }
             });
 
     });
@@ -141,31 +145,34 @@ $(document).ready(function () {
 
         let chk_box = $(".check_box:checked");
 
-        if (chk_box){
+        if (chk_box) {
 
             // mass delete request
             $.post("?ajax=massDelete", params)
 
                 .done(function (response) {
-                    chk_box.parent().parent().parent().parent().remove();
-                    $(document).Toasts('create', {
-                        class: 'bg-success',
-                        title: 'Success',
-                        subtitle: 'Subtitle',
-                        body: 'Product successful deleted'
-                    })
+                    if (response) {
+                        chk_box.parent().parent().parent().parent().remove();
+                        $(document).Toasts('create', {
+                            class: 'bg-success',
+                            title: 'Success',
+                            subtitle: 'Subtitle',
+                            body: 'Product successful deleted'
+                        })
+                    }
                 })
 
-                .fail(function () {
-                    $(document).Toasts('create', {
-                        class: 'bg-danger',
-                        title: 'Error',
-                        subtitle: 'Subtitle',
-                        body: 'Something went wrong'
-                    })
+                .fail(function (response) {
+                    if (response) {
+                        $(document).Toasts('create', {
+                            class: 'bg-danger',
+                            title: 'Error',
+                            subtitle: 'Subtitle',
+                            body: 'Something went wrong'
+                        })
+                    }
                 });
-        }
-        else{
+        } else {
             $(document).Toasts('create', {
                 class: 'bg-danger',
                 title: 'Error',
