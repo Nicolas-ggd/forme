@@ -7,6 +7,7 @@ require_once 'vendor/autoload.php';
 
 $uri = $_SERVER['REQUEST_URI'];
 
+session_start();
 
 switch ($uri) {
     case 'admin':
@@ -20,7 +21,7 @@ switch ($uri) {
     //sxva casebi
     default:
         $controller = new \App\Controller\ProductController();
-        $userController = new \App\Controller\UserController();
+        $authController = new \App\Controller\AuthController();
         $registrationController = new \App\Controller\RegistrationController();
 
         if (isset($_GET['action'])) {
@@ -31,14 +32,14 @@ switch ($uri) {
             if ($_GET['action'] == 'addProduct') {
                 $controller->addView();
             }
-            if ($_GET['action'] == 'back') {
+            if ($_GET['action'] == 'home') {
                 $controller->index();
             }
-            if ($_GET['action'] == 'create') {
-                $registrationController->createView();
+            if ($_GET['action'] == 'login') {
+                $authController->loginView();
             }
-            if ($_GET['action'] == 'login'){
-                $registrationController->loginView();
+            if ($_GET['action'] == 'create'){
+                $registrationController->createView();
             }
 
         } elseif (isset($_GET['ajax'])) {
@@ -56,6 +57,12 @@ switch ($uri) {
             }
             if ($_GET['ajax'] == "createUser") {
                 $registrationController->registration();
+            }
+            if ($_GET['ajax'] == "userLogin") {
+                $authController->logIn();
+            }
+            if ($_GET['ajax'] == "userLogout") {
+                $authController->logOut();
             }
 
         } else {
