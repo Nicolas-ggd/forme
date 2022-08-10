@@ -23,6 +23,7 @@ switch ($uri) {
         $controller = new \App\Controller\ProductController();
         $authController = new \App\Controller\AuthController();
         $registrationController = new \App\Controller\RegistrationController();
+        $userController = new \App\Controller\UserController();
 
         if (isset($_GET['action'])) {
 
@@ -40,6 +41,9 @@ switch ($uri) {
             }
             if ($_GET['action'] == 'create'){
                 $registrationController->createView();
+            }
+            if ($_GET['action'] == 'profile'){
+                $userController->profile();
             }
 
         } elseif (isset($_GET['ajax'])) {
