@@ -8,19 +8,19 @@ use PDO;
 class UserRepository
 {
     // select function
-    function select($user_id = false)
+    public function select($user_email = false)
     {
         $db = new DB();
 
 
         $sql = 'SELECT * FROM users';
 
-        if ($user_id){
-            $sql .= " WHERE ID = $user_id";
+        if ($user_email){
+            $sql .= " WHERE user_email = '$user_email'";
         }
         $result = $db->execute($sql);
 
-        if ($user_id) {
+        if ($user_email) {
             return $result->fetch(PDO::FETCH_ASSOC);
         }
 
