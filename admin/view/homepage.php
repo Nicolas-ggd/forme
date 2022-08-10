@@ -433,20 +433,20 @@
                                                                                    id="edit_line"
                                                                                    class="btn  btn-warning btn-rounded">
                                                                                     <i class="bi bi-pencil"></i>
-                                                                                    Edit
+
                                                                                 </a>
 
                                                                                 <button type="button"
                                                                                         class="btn btn-danger delete_form btn-rounded">
                                                                                     <i class="ties bi bi-trash"></i>
-                                                                                    Delete
+
                                                                                 </button>
 
                                                                                 <button type="button"
                                                                                         value="<?php echo $product['id']; ?>"
                                                                                         class="d-none btn btn-success confirm btn-rounded">
                                                                                     <i class="ties bi bi-check-lg"></i>
-                                                                                    Confirm
+                                                                                    
                                                                                 </button>
                                                                             </td>
                                                                         </tr>
