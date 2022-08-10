@@ -134,6 +134,9 @@
                     <a href="#" class="dropdown-item">
                         <i class="mx-1 bi bi-envelope"></i><?php echo isset($_SESSION['user_email']) ? $_SESSION['user_email'] : 'user'; ?>
                     </a>
+                    <a href="?action=profile" class="dropdown-item">
+                        <i class="bi bi-person mx-1"></i> Profile
+                    </a>
                     <a href="#" class="dropdown-item">
                         <i class="bi bi-gear mx-1"></i> Settings
                     </a>
