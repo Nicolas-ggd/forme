@@ -6,7 +6,9 @@
             "email": "98224439+Nicolas-ggd@users.noreply.github.com"
         }
     ],
-    "require": {},
+    "require": {
+        "symfony/var-dumper": "^5.4"
+    },
     "autoload": {
         "classmap": ["admin/App"]
     }
