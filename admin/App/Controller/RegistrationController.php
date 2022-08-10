@@ -21,10 +21,6 @@ class RegistrationController
         require 'admin/view/pages/CreateAccount.php';
     }
 
-    public function loginView(){
-        require 'admin/view/pages/Login.php';
-    }
-
     public function registration(){
         $data = $this->request->createRequest();
 
