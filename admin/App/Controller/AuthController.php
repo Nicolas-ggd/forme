@@ -58,6 +58,7 @@ class AuthController
         $_SESSION['user_email'] = $user['user_email'];
         $_SESSION['user_name'] = $user['user_name'];
         $_SESSION['user_lastname'] = $user['user_lastname'];
+
     }
 
     public function logOut(){
