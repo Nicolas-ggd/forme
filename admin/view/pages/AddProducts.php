@@ -340,7 +340,7 @@
                                     <button type="submit" class="btn btn-success" id="send" name="add_product" form="add_form">
                                         Submit
                                     </button>
-                                    <a href="?action=back" class="btn btn-warning" form="add_form">Back</a>
+                                    <a href="/" class="btn btn-warning" form="add_form">Back</a>
 
                                 </form>
 
