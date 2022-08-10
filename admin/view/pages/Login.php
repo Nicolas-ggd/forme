@@ -37,15 +37,16 @@
     <script src="/public/dist/js/demo.js"></script>
     <script src="/public/plugins/jquery-validation/jquery.validate.min.js"></script>
     <script src="/public/plugins/jquery-validation/additional-methods.min.js"></script>
+    <script src="/public/js/Login.js"></script>
 
 
 </head>
 <body class="register-page iframe-mode" style="height: 100%;">
-<section class="content">
+<section class="content w-100">
     <div class="container-fluid">
 
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row justify-content-center">
+            <div class="col-md-3">
                 <div class="card card-primary">
 
                     <div class="card-header">
@@ -63,11 +64,14 @@
                                 <input type="password" name="user_password" class="form-control" placeholder="Password">
                             </div>
                             <div class="form-group mb-0">
-                                <div class="custom-control custom-checkbox">
+                                <div class="custom-control custom-checkbox d-flex justify-content-between">
                                     <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
                                     <label class="custom-control-label" for="exampleCheck1">I agree to the <a href="#">terms
                                             of service</a>.</label>
+                                    <a href="?action=create">Create account</a>
+
                                 </div>
+
                             </div>
                         </div>
                         <div class="card-footer">
