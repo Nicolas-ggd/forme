@@ -49,8 +49,8 @@
             <div class="col-md-3">
                 <div class="card card-primary">
 
-                    <div class="card-header">
-                        <h3 class="card-title">Quick Example <small>jQuery Validation</small></h3>
+                    <div class="card-header" style="background-color: rgb(23 162 184);">
+                        <h3 class="card-title">Quick Login</h3>
                     </div>
 
                     <form id="login_form" method="post">
@@ -66,16 +66,16 @@
                             <div class="form-group mb-0">
                                 <div class="custom-control custom-checkbox d-flex justify-content-between">
                                     <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
-                                    <label class="custom-control-label" for="exampleCheck1">I agree to the <a href="#">terms
+                                    <label class="custom-control-label" for="exampleCheck1">I agree to the <a href="#" style="color: rgb(23 162 184);">terms
                                             of service</a>.</label>
-                                    <a href="?action=create">Create account</a>
+                                    <a style="color: rgb(23 162 184);" href="?action=create">Create account</a>
 
                                 </div>
 
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button type="submit" form="login_form" class="btn btn-primary">Submit</button>
+                            <button type="submit" form="login_form" class="btn btn-primary" style="background-color: rgb(23 162 184); border-color: rgb(23 162 184);">Submit</button>
                         </div>
                     </form>
 
