@@ -43,7 +43,10 @@ class RegistrationRequest
             $data['name'] = $_POST['user_name'];
             $data['lastname'] = $_POST['user_lastname'];
             $data['email'] = $_POST['user_email'];
-            $data['password'] = $_POST['user_password'];
+            $password = $_POST['user_password'];
+            $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+            $data['password'] = $hashed_password;
+
         } else {
             $data['error'] = $error;
             http_response_code(400);
