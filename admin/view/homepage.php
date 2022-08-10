@@ -123,16 +123,23 @@
             <!-- User -->
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
-                    <i class="far fa-bell"></i>
+                    <i class="fas fa-user"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 
                     <span class="dropdown-item dropdown-header">
-                        <?php echo isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'user'; ?></span>
+                        <?php echo isset($_SESSION['user_name']) ? $_SESSION['user_name'] .' '. $_SESSION['user_lastname'] : 'user'; ?></span>
                     <div class="dropdown-divider"></div>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="mx-1 bi bi-envelope"></i><?php echo isset($_SESSION['user_email']) ? $_SESSION['user_email'] : 'user'; ?>
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <i class="bi bi-gear mx-1"></i> Settings
+                    </a>
                     <a href="?action=create" class="dropdown-item">
-                        <i class="fas fa-user mr-2"></i> Log Out
-                        <span class="float-right text-muted text-sm">Few minutes ago</span>
+                        <i class="bi bi-box-arrow-right mx-1"></i> Log Out
+                        <span class="float-right text-muted text-sm"></span>
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
@@ -198,7 +205,7 @@
                 </div>
                 <div class="info">
                     <a href="#"
-                       class="d-block"><?php echo isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'user'; ?></a>
+                       class="d-block"><?php echo isset($_SESSION['user_name']) ? $_SESSION['user_name'] .' '. $_SESSION['user_lastname'] : 'user'; ?></a>
                 </div>
             </div>
 
