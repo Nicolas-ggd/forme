@@ -62,15 +62,18 @@ class AuthController
     }
 
     public function logOut(){
+        $data = [];
 
         if (session_destroy()){
-            $data = 'Success';
+            $data = "success";
         } else {
             http_response_code(400);
             $data['error'] = ['session could not be destroyed'];
         }
 
         echo json_encode($data);
+        //redirect login
+        header("Location: ?action=login");
     }
 
 
