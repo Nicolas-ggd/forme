@@ -22,6 +22,10 @@ class ProductController
         require 'admin/view/homepage.php';
     }
 
+    public function homeIndexPage(){
+        require 'admin/view/pages/Index.php';
+    }
+
     public function addView(){
          require 'admin/view/pages/AddProducts.php';
     }
