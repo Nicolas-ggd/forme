@@ -1,0 +1,5 @@
+CREATE TABLE permision
+(
+    id        INT AUTO_INCREMENT UNIQUE PRIMARY KEY NOT NULL,
+    user_permision VARCHAR(250) NOT NULL
+)
