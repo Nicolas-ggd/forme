@@ -18,7 +18,7 @@ $(document).ready(function () {
                     })
 
                     setTimeout(function () {
-                        window.location.href = '/';
+                        window.location.href = '?action=home';
                     }, 1000)
                 })
 
@@ -47,7 +47,7 @@ $(document).ready(function () {
                     if (response) {
 
                         setTimeout(function () {
-                            window.location.href = '/';
+                            window.location.href = '?action=home';
                         }, 1000)
 
                     }
