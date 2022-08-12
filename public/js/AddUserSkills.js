@@ -18,7 +18,7 @@ $(document).ready(function () {
                     })
 
                     setTimeout(function () {
-                        // window.location.href = '/';
+                        window.location.href = '?action=userSkills';
                     }, 1000)
                 })
 
@@ -47,7 +47,7 @@ $(document).ready(function () {
                     if (response) {
 
                         setTimeout(function () {
-                            // window.location.href = '/';
+                            window.location.href = '?action=userSkills';
                         }, 1000)
 
                     }
@@ -89,7 +89,7 @@ $(document).ready(function () {
         let btn = $(this);
         let val = btn.val();
 
-        let params = [{name: "product_id", value: val}];
+        let params = [{name: "skills_id", value: val}];
 
         e.preventDefault();
 
