@@ -145,7 +145,7 @@
                                                                             <td>
                                                                                 <div class="d-flex align-items-center">
                                                                                     <div class="ms-3">
-                                                                                        <p class="fw-bold mb-1"><?php echo $skills['skills']; ?></p>
+                                                                                        <p class="fw-bold mb-1"><?php echo $skills['user_skills']; ?></p>
                                                                                         <p class="text-muted mb-0"></p>
                                                                                     </div>
                                                                                 </div>
