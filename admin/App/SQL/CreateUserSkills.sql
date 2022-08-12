@@ -1,5 +1,5 @@
 CREATE TABLE skills
 (
     id     INT AUTO_INCREMENT PRIMARY KEY UNIQUE NOT NULL,
-    skills VARCHAR(250) NOT NULL
+    user_skills VARCHAR(250) NOT NULL
 )
