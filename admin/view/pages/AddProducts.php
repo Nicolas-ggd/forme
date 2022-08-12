@@ -61,21 +61,8 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
 
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Blank Page</li>
-                        </ol>
-                    </div>
-                </div>
-            </div><!-- /.container-fluid -->
-        </section>
+        <?php require 'admin/view/components/PageHeader.php'; ?>
 
         <!-- Main content -->
         <section class="content">
@@ -98,7 +85,7 @@
                                 <form method="post" id="add_form">
                                     <?php
 
-                                    if($product_id){
+                                    if(isset($product_id)){
                                         echo '<input type="hidden" class="form-control" name="product_id" value="' . $product_id . '" id="product_id">';
                                     }
 
@@ -150,6 +137,8 @@
 
         </section>
     </div>
+    <?php require 'admin/view/components/Footer.php'; ?>
+
 </div>
 
 </body>
