@@ -27,6 +27,16 @@ class UserRepository
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function countAllUsers(){
+        $db = new DB();
+
+        $sql = 'SELECT COUNT(*) FROM users';
+
+        $result = $db->execute($sql);
+
+        return $result->fetch(PDO::FETCH_COLUMN);
+    }
+
     // insert function
     function insert($name, $lastname, $email, $password)
     {
