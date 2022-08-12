@@ -25,6 +25,7 @@ switch ($uri) {
         $registrationController = new \App\Controller\RegistrationController();
         $userController = new \App\Controller\UserController();
         $userSkillsController = new \App\Controller\UserSkillsController();
+        $userPermisionController = new \App\Controller\PermisionController();
 
         if (isset($_GET['action'])) {
 
@@ -62,7 +63,16 @@ switch ($uri) {
                 $userSkillsController ->addSkillsView();
             }
             if ($_GET['action'] == 'homeIndex'){
-                $userSkillsController->homeIndexPage();
+                $userController->countAll();
+            }
+            if ($_GET['action'] == 'permision'){
+                $userPermisionController->permisionView();
+            }
+            if ($_GET['action'] == 'editPermision'){
+                $userPermisionController->editPermisionView();
+            }
+            if ($_GET['action'] == 'addPermision'){
+                $userPermisionController->addPermisionView();
             }
 
 
@@ -97,12 +107,24 @@ switch ($uri) {
             if ($_GET['ajax'] == "editSkills"){
                 $userSkillsController->edit();
             }
+            if ($_GET['ajax'] == "deletePermision"){
+                $userPermisionController->delete();
+            }
+            if ($_GET['ajax'] == "massDeletePermision"){
+                $userPermisionController->massDelete();
+            }
+            if ($_GET['ajax'] == "addPermision"){
+                $userPermisionController->add();
+            }
+            if ($_GET['ajax'] == "editPermision"){
+                $userPermisionController->edit();
+            }
 
 
 
         } else {
 
-            $controller->homeIndexPage();
+            $userSkillsController->homeIndexPage();
 
         }
         break;
