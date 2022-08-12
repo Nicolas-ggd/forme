@@ -65,6 +65,7 @@
 
         </section>
 
+        <?php require 'admin/view/components/Footer.php'; ?>
 
 </body>
 </html>
