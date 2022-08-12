@@ -131,13 +131,11 @@
                                                value="<?php echo isset($product) ? $product['product_deadline'] : ''; ?>"
                                                id="product_deadline"
                                                class="form-control" style="background: white;" readonly/>
-                                        <div id="inputClientCompanyHelp" class="form-text">გაითვალისწინეთ, თქვენს მიერ დამატებული პროდუქტი საიტზე განთავსებული იქნება მითითებული თარიღის ჩათვლით,</div>
-                                        <div id="inputClientCompanyHelp" class="form-text">ვადა გადაცილებული პროდუქტი საიტიდან ავტომატურად წაიშლება.</div>
                                     </div>
                                     <button type="submit" class="btn btn-success" id="send" name="add_product" form="add_form">
                                         გაგზავნა
                                     </button>
-                                    <a href="/" class="btn btn-warning" form="add_form">უკან</a>
+                                    <a href="?action=home" class="btn btn-warning" form="add_form">უკან</a>
 
                                 </form>
 
