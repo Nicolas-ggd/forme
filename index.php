@@ -62,7 +62,7 @@ switch ($uri) {
                 $userSkillsController ->addSkillsView();
             }
             if ($_GET['action'] == 'homeIndex'){
-                $controller->homeIndexPage();
+                $userSkillsController->homeIndexPage();
             }
 
 

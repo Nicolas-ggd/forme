@@ -19,6 +19,10 @@ class UserSkillsController
 
     }
 
+    public function homeIndexPage(){
+        require 'admin/view/pages/Index.php';
+    }
+
     public function skills()
     {
         $userSkills = $this->repository->select();
