@@ -24,6 +24,7 @@ switch ($uri) {
         $authController = new \App\Controller\AuthController();
         $registrationController = new \App\Controller\RegistrationController();
         $userController = new \App\Controller\UserController();
+        $userSkillsController = new \App\Controller\UserSkillsController();
 
         if (isset($_GET['action'])) {
 
@@ -42,9 +43,28 @@ switch ($uri) {
             if ($_GET['action'] == 'create'){
                 $registrationController->createView();
             }
+            if ($_GET['action'] == 'logout'){
+                $authController->logOut();
+            }
             if ($_GET['action'] == 'profile'){
                 $userController->profile();
             }
+            if ($_GET['action'] == 'usersPage'){
+                $userController->getAllUsers();
+            }
+            if ($_GET['action'] == 'userSkills'){
+                $userSkillsController->skills();
+            }
+            if ($_GET['action'] == 'editSkills'){
+                $userSkillsController->editSkillsView();
+            }
+            if ($_GET['action'] == 'addSkills'){
+                $userSkillsController ->addSkillsView();
+            }
+            if ($_GET['action'] == 'homeIndex'){
+                $controller->homeIndexPage();
+            }
+
 
         } elseif (isset($_GET['ajax'])) {
             if ($_GET['ajax'] == 'productDelete') {
@@ -65,13 +85,24 @@ switch ($uri) {
             if ($_GET['ajax'] == "userLogin") {
                 $authController->logIn();
             }
-            if ($_GET['ajax'] == "userLogout") {
-                $authController->logOut();
+            if ($_GET['ajax'] == "deleteSkills"){
+                $userSkillsController->delete();
             }
+            if ($_GET['ajax'] == "massDeleteSkills"){
+                $userSkillsController->massDelete();
+            }
+            if ($_GET['ajax'] == "addSkills"){
+                $userSkillsController->add();
+            }
+            if ($_GET['ajax'] == "editSkills"){
+                $userSkillsController->edit();
+            }
+
+
 
         } else {
 
-            $controller->index();
+            $controller->homeIndexPage();
 
         }
         break;
