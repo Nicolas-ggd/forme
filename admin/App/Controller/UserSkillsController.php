@@ -33,7 +33,7 @@ class UserSkillsController
         $skills_id = isset($_GET['skills_id']) ? $_GET['skills_id'] : false;
 
         if ($skills_id){
-            $product = $this->repository->select($skills_id);
+            $skills = $this->repository->select($skills_id);
 
             require 'admin/view/pages/AddUserSkills.php';
         }else{
@@ -50,7 +50,7 @@ class UserSkillsController
         $data = $this->request->skillRequest();
 
         if(!isset($data['error'])){
-            $this->repository->insert();
+            $this->repository->insert($data['user_skills']);
             $data = $data["Success"];
         } else {
             $data = 'Error';
@@ -84,7 +84,7 @@ class UserSkillsController
             $this->repository->delete($skills_id);
             $data = 'Success';
         } else {
-            $data = 'Error';
+            $data['error'] = 'Error';
         }
 
         echo json_encode($data);
