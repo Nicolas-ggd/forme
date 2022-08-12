@@ -28,4 +28,9 @@ class UserController
 
     }
 
+    public function countAll(){
+        $countUsers = $this->repository->countAllUsers();
+        require 'admin/view/pages/Index.php';
+    }
+
 }
