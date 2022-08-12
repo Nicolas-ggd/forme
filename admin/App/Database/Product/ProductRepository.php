@@ -15,7 +15,7 @@ class ProductRepository
 
         $sql = 'SELECT * FROM product';
 
-        if ($product_id){
+        if ($product_id) {
             $sql .= " WHERE ID = $product_id";
         }
         $result = $db->execute($sql);
@@ -88,7 +88,7 @@ class ProductRepository
     {
         $db = new DB();
 
-        $query = "DELETE FROM product WHERE id IN (".implode(",", $product_id).")";
+        $query = "DELETE FROM product WHERE id IN (" . implode(",", $product_id) . ")";
 
         $result = $db->execute($query);
 
