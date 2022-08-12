@@ -30,21 +30,8 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>Blank Page</h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Blank Page</li>
-                        </ol>
-                    </div>
-                </div>
-            </div><!-- /.container-fluid -->
-        </section>
+        <?php require 'admin/view/components/PageHeader.php'; ?>
+
 
         <!-- Main content -->
         <section class="content">
@@ -76,7 +63,8 @@
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <div class="">
                                                     <a href="?action=addProduct"
-                                                       class="btn btn-outline-info my-2 btn-rounded">პროდუქტის დამატება</a>
+                                                       class="btn btn-outline-info my-2 btn-rounded">პროდუქტის
+                                                        დამატება</a>
 
                                                     <button type="button"
                                                             class="h-20 btn btn-outline-warning btn-rounded mass">
@@ -229,8 +217,9 @@
             </div>
         </section>
     </div>
-</div>
+    <?php require 'admin/view/components/Footer.php'; ?>
 
+</div>
 
 <script src="/public/plugins/jquery/jquery.min.js"></script>
 <script src="/public/lib/CodeSeven-toastr-2.1.4-7-g50092cc/CodeSeven-toastr-50092cc/toastr.js"></script>
