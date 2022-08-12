@@ -10,6 +10,7 @@
         "symfony/var-dumper": "^5.4"
     },
     "autoload": {
-        "classmap": ["admin/App"]
+        "classmap": ["admin/App"],
+        "files": ["Translation/Base.php"]
     }
 }
