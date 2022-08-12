@@ -60,7 +60,10 @@
     <script src="/public/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
     <script src="/public/plugins/bs-stepper/js/bs-stepper.min.js"></script>
     <script src="/public/plugins/dropzone/min/dropzone.min.js"></script>
+    <!-- add user skills  js -->
     <script src="/public/js/AddUserSkills.js"></script>
+    <!-- checkbox select js -->
+    <script src="/public/js/CheckboxSelect.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -120,11 +123,11 @@
                                     ?>
                                     <div class="form-group">
                                         <label for="inputName">უნარი</label>
-                                        <input type="text" id="skills" name="skills" class="form-control"
-                                               value="<?php echo isset($skills) ? $skills['skills'] : ''; ?>">
+                                        <input type="text" id="skills" name="user_skills" class="form-control"
+                                               value="<?php echo isset($skills) ? $skills['user_skills'] : ''; ?>">
                                     </div>
 
-                                    <button type="submit" class="btn btn-success" id="send"  form="add_form">
+                                    <button type="submit" class="btn btn-success" id="send" name="add_form" form="add_form">
                                         გაგზავნა
                                     </button>
                                     <a href="?action=userSkills" class="btn btn-warning" >უკან</a>
