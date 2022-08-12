@@ -9,19 +9,19 @@ class UserSkillsRepository
 {
 
     // select function
-    public function select($user_id = false)
+    public function select($skills_id = false)
     {
         $db = new DB();
 
 
         $sql = 'SELECT * FROM skills';
 
-        if ($user_id){
-            $sql .= " WHERE id = '$user_id'";
+        if ($skills_id){
+            $sql .= " WHERE id = '$skills_id'";
         }
         $result = $db->execute($sql);
 
-        if ($user_id) {
+        if ($skills_id) {
             return $result->fetch(PDO::FETCH_ASSOC);
         }
 
@@ -34,7 +34,7 @@ class UserSkillsRepository
 
         $db = new DB();
 
-        $query = "INSERT INTO skills (skills)
+        $query = "INSERT INTO skills (user_skills)
               VALUES ('$skills')";
 
         $result = $db->execute($query);
@@ -47,7 +47,7 @@ class UserSkillsRepository
     {
         $db = new DB();
 
-        $query = "UPDATE skills SET skills = '$skills'
+        $query = "UPDATE skills SET user_skills = '$skills'
               WHERE id = $skills_id;";
 
         $result = $db->execute($query);
