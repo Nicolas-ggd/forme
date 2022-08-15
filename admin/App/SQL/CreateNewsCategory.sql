@@ -1,0 +1,5 @@
+CREATE TABLE category
+(
+    id INT AUTO_INCREMENT NOT NULL UNIQUE PRIMARY KEY,
+    news_category VARCHAR(250) NOT NULL
+)
