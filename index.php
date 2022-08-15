@@ -26,6 +26,8 @@ switch ($uri) {
         $userController = new \App\Controller\UserController();
         $userSkillsController = new \App\Controller\UserSkillsController();
         $userPermisionController = new \App\Controller\PermisionController();
+        $newsController = new \App\Controller\NewsController();
+        $newsCategory = new \App\Controller\NewsCategory();
 
         if (isset($_GET['action'])) {
 
@@ -74,6 +76,24 @@ switch ($uri) {
             if ($_GET['action'] == 'addPermision'){
                 $userPermisionController->addPermisionView();
             }
+            if ($_GET['action'] == 'news'){
+                $newsController->news();
+            }
+            if ($_GET['action'] == 'addNews'){
+                $newsController->addNewsView();
+            }
+            if ($_GET['action'] == 'editNews'){
+                $newsController->editNewsView();
+            }
+            if ($_GET['action'] == 'category'){
+                $newsCategory->category();
+            }
+            if ($_GET['action'] == 'addNewCategory'){
+                $newsCategory->addSCategoryView();
+            }
+            if ($_GET['action'] == 'editNewCategory'){
+                $newsCategory->editCategoryView();
+            }
 
 
         } elseif (isset($_GET['ajax'])) {
@@ -119,12 +139,35 @@ switch ($uri) {
             if ($_GET['ajax'] == "editPermision"){
                 $userPermisionController->edit();
             }
-
+            if ($_GET['ajax'] == 'editNews'){
+                $newsController->edit();
+            }
+            if ($_GET['ajax'] == 'addNews'){
+                $newsController->add();
+            }
+            if ($_GET['ajax'] == 'deleteNews'){
+                $newsController->delete();
+            }
+            if ($_GET['ajax'] == 'massDeleteNews'){
+                $newsController->massDelete();
+            }
+            if ($_GET['ajax'] == 'editNewCategory'){
+                $newsCategory->edit();
+            }
+            if ($_GET['ajax'] == 'addNewCategory'){
+                $newsCategory->add();
+            }
+            if ($_GET['ajax'] == 'deleteNewCategory'){
+                $newsCategory->delete();
+            }
+            if ($_GET['ajax'] == 'massDeleteNewCategory'){
+                $newsCategory->massDelete();
+            }
 
 
         } else {
 
-            $userSkillsController->homeIndexPage();
+            $userController->countAll();
 
         }
         break;
