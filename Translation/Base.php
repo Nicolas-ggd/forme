@@ -20,6 +20,12 @@ function translationList()
         'editSkills' => 'უნარების რედაქტირება',
         'permision' => 'უფლებები',
         'addPermision' => 'უფლებების დამატება',
-        'editPermision' => 'უფლებების რედაქტირება'
+        'editPermision' => 'უფლებების რედაქტირება',
+        'news' => 'სიახლეები',
+        'addNews' => 'სიახლეების დამატება',
+        'editNews' => 'სიახლეების რედაქტირება',
+        'category' => 'სიახლეების კატეგორია',
+        'addNewCategory' => 'კატეგორიების დამატება',
+        'editNewCategory' => 'კატეგორიების რედაქტირება'
     ];
 }
