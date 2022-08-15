@@ -109,6 +109,40 @@
 
 
                 </li>
+                <li class="nav-item">
+
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-copy"></i>
+
+                        <p class="mx-1">
+                            სიახლეები
+                            <i class="right fas fa-angle-left"></i>
+
+                        </p>
+                    </a>
+
+
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="?action=news" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>სიახლეები</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="?action=category" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>კატეგორიები</p>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
